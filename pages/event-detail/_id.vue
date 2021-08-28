@@ -286,26 +286,31 @@
 export default {
   head() {
     return {
-      title: await this.items.nama + ' | event | HMI Komfaktek Melangkah Maju',
+      title:
+        this.detailEventasync.data.nama +
+        ' | event | HMI Komfaktek Melangkah Maju dari function asycn',
       meta: [
         {
-
           name: 'description',
-          content: await this.shortDesk,
+          content: this.shortDesk,
         },
         {
           name: 'title',
-          content: await this.items.nama + ' | event | HMI Komfaktek Melangkah Maju',
+          content: this.items.nama + ' | event | HMI Komfaktek Melangkah Maju',
         },
         {
           itemprop: 'title',
           name: 'title',
-          content: await this.items.nama + ' | event | HMI Komfaktek Melangkah Maju',
+          content:
+            this.detailEventasync.data.nama +
+            ' | event | HMI Komfaktek Melangkah Maju dari function asycn',
         },
         {
           name: 'og:title',
           property: 'og:title',
-          content: await this.items.nama + ' | event | HMI Komfaktek Melangkah Maju',
+          content:
+            this.detailEventasync.data.nama +
+            ' | event | HMI Komfaktek Melangkah Maju dari function asycn',
         },
         {
           name: 'og:site_name',
@@ -323,23 +328,23 @@ export default {
           name: 'og:url',
           property: 'og:url',
           content:
-           await 'https://hmi-komfaktek.vercel.app/event-detail/' +
+            'https://hmi-komfaktek.vercel.app/event-detail/' +
             this.$route.params.id,
         },
         {
           name: 'og:image',
           property: 'og:image',
-          content: await this.items.image,
+          content: this.items.image,
         },
         {
           name: 'image',
           property: 'image',
-          content: await this.items.image,
+          content: this.items.image,
         },
         {
           name: 'instagram:title',
           property: 'instagram:title',
-          content: await 'instagram title'+this.items.nama,
+          content: 'instagram title' + this.items.nama,
         },
         {
           name: 'instagram:card',
@@ -349,22 +354,29 @@ export default {
         {
           name: 'image',
           itemprop: 'image',
-          content: await this.items.image,
+          content: this.items.image,
         },
         {
           name: 'description',
           itemprop: 'description',
-          content: await this.shortDesk,
+          content:
+            this.detailEventasync.data.nama +
+            ' | event | HMI Komfaktek Melangkah Maju dari function asycn',
         },
         {
+          hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: await this.shortDesk,
+          content:
+            this.detailEventasync.data.nama +
+            ' | event | HMI Komfaktek Melangkah Maju dari function asycn',
         },
         {
           name: 'og:description',
           itemprop: 'og:description',
-          content: await this.shortDesk,
+          content:
+            this.detailEventasync.data.nama +
+            ' | event | HMI Komfaktek Melangkah Maju dari function asycn',
         },
       ],
     }
@@ -429,8 +441,9 @@ export default {
     },
   },
 
-  async getEventDetail(params, $axios){
-    let eventDetails =
-  }
+  async asyncData({ $axios, params }) {
+    const detailEventasync = await $axios.$get('event/' + params.id)
+    return { detailEventasync }
+  },
 }
 </script>
