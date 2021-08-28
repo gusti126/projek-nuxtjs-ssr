@@ -286,31 +286,28 @@
 export default {
   head() {
     return {
-      title: this.items.nama + ' | event | HMI Komfaktek Melangkah Maju',
+      title: await this.items.nama + ' | event | HMI Komfaktek Melangkah Maju',
       meta: [
         {
-          hid: 'description',
+
           name: 'description',
-          content: this.shortDesk,
+          content: await this.shortDesk,
         },
         {
-          hid: 'title',
           name: 'title',
-          content: this.items.nama + ' | event | HMI Komfaktek Melangkah Maju',
+          content: await this.items.nama + ' | event | HMI Komfaktek Melangkah Maju',
         },
         {
           itemprop: 'title',
           name: 'title',
-          content: this.items.nama + ' | event | HMI Komfaktek Melangkah Maju',
+          content: await this.items.nama + ' | event | HMI Komfaktek Melangkah Maju',
         },
         {
-          hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: this.items.nama + ' | event | HMI Komfaktek Melangkah Maju',
+          content: await this.items.nama + ' | event | HMI Komfaktek Melangkah Maju',
         },
         {
-          hid: 'og:site_name',
           name: 'og:site_name',
           property: 'og:site_name',
           content: ' HMI Komfaktek Melangkah Maju',
@@ -326,36 +323,48 @@ export default {
           name: 'og:url',
           property: 'og:url',
           content:
-            'https://hmi-komfaktek.vercel.app/event-detail/' +
+           await 'https://hmi-komfaktek.vercel.app/event-detail/' +
             this.$route.params.id,
         },
         {
-          hid: 'og:image',
           name: 'og:image',
           property: 'og:image',
-          content: this.items.image,
+          content: await this.items.image,
         },
         {
-          hid: 'image',
           name: 'image',
           property: 'image',
-          content: this.items.image,
+          content: await this.items.image,
+        },
+        {
+          name: 'instagram:title',
+          property: 'instagram:title',
+          content: await 'instagram title'+this.items.nama,
+        },
+        {
+          name: 'instagram:card',
+          property: 'instagram:card',
+          content: 'article',
         },
         {
           name: 'image',
           itemprop: 'image',
-          content: this.items.image,
+          content: await this.items.image,
         },
         {
           name: 'description',
           itemprop: 'description',
-          content: this.shortDesk,
+          content: await this.shortDesk,
         },
         {
-          hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: this.shortDesk,
+          content: await this.shortDesk,
+        },
+        {
+          name: 'og:description',
+          itemprop: 'og:description',
+          content: await this.shortDesk,
         },
       ],
     }
@@ -379,6 +388,7 @@ export default {
     this.eventDetail()
     this.cekMyEvent()
   },
+
   methods: {
     async eventDetail() {
       let data = await this.$axios
@@ -418,5 +428,9 @@ export default {
       }
     },
   },
+
+  async getEventDetail(params, $axios){
+    let eventDetails =
+  }
 }
 </script>
