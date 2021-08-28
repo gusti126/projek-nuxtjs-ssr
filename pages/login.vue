@@ -140,6 +140,82 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title:
+        'Bergabung | event | HMI Komfaktek Melangkah Maju dari function asycn',
+      meta: [
+        {
+          name: 'description',
+          content: 'bergabung bersama HMI Komfaktek ',
+        },
+        {
+          name: 'title',
+          content:
+            'Bergabung | event | HMI Komfaktek Melangkah Maju dari function asycn',
+        },
+        {
+          itemprop: 'title',
+          name: 'title',
+          content:
+            'Bergabung | event | HMI Komfaktek Melangkah Maju dari function asycn',
+        },
+        {
+          itemprop: 'image',
+          name: 'image',
+          content:
+            'https://hmi-komfaktek.vercel.app/_nuxt/img/logo-komfaktek.822fb18.png',
+        },
+        {
+          name: 'og:title',
+          property: 'og:title',
+          content:
+            'Bergabung | event | HMI Komfaktek Melangkah Maju dari function asycn',
+        },
+        {
+          property: 'og:image',
+          content:
+            'https://hmi-komfaktek.vercel.app/_nuxt/img/logo-komfaktek.822fb18.png',
+        },
+        {
+          name: 'og:site_name',
+          property: 'og:site_name',
+          content: ' HMI Komfaktek Melangkah Maju',
+        },
+        {
+          hid: 'og:type',
+          name: 'og:type',
+          property: 'og:type',
+          content: 'article',
+        },
+
+        {
+          name: 'instagram:card',
+          property: 'instagram:card',
+          content: 'article',
+        },
+        {
+          name: 'description',
+          itemprop: 'description',
+          content:
+            ' | event | HMI Komfaktek Melangkah Maju dari function asycn',
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content:
+            'Bergabung | event | HMI Komfaktek Melangkah Maju dari function asycn',
+        },
+        {
+          name: 'og:description',
+          itemprop: 'og:description',
+          content:
+            'Bergabung | event | HMI Komfaktek Melangkah Maju dari function asycn',
+        },
+      ],
+    }
+  },
   data() {
     return {
       login: {
