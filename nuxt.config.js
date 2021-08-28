@@ -24,6 +24,7 @@ export default {
         property: 'og:title',
         content: 'HMI KOMFAKTEK | Melangkah Maju',
       },
+
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [

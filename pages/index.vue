@@ -387,6 +387,24 @@
 
 <script>
 export default {
+  head() {
+    return {
+      meta: [
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          property: 'og:image',
+          content: 'https://hmi-komfaktek.vercel.app/logo-komfaktek.png',
+        },
+        {
+          hid: 'image',
+          name: 'image',
+          property: 'image',
+          content: '~/static/logo-komfaktek.png',
+        },
+      ],
+    }
+  },
   data() {
     return {
       items: [],
