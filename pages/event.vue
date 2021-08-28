@@ -263,121 +263,159 @@
       </div>
     </section>
 
-    <div class="md:relative bg-white py-14">
-      <section
-        class="
-          md:px-10
-          px-4
-          grid grid-flow-row grid-cols-12
-          md:gap-8
-          gap-4
-          z-20
-        "
-      >
-        <div class="col-span-12 md:col-span-6 z-20">
-          <div><img src="~assets/image/anies.png" alt="" /></div>
+    <div class="container md:px-10 px-4 md:my-10 py-10 mt-2 bg-white">
+      <div class="md:text-2xl text-xl text-gray-700 font-semibold">
+        Event Terbaru
+      </div>
+
+      <!-- loading skeleton -->
+      <div class="grid grid-flow-row grid-cols-12 gap-6 mt-4" v-if="isLoading">
+        <div class="col-span-12 md:col-span-4" v-for="p of 6">
+          <div class="border p-4 rounded">
+            <div class="animate-pulse">
+              <div
+                class="
+                  bg-gray-300
+                  h-28
+                  w-full
+                  rounded
+                  flex flex-wrap
+                  content-center
+                "
+              >
+                <div class="font-semibold text-gray-500 mx-auto">
+                  memuat data sebentar...
+                </div>
+              </div>
+              <div class="bg-gray-300 h-4 w-full mt-3 rounded-full"></div>
+              <div class="bg-gray-300 h-4 md:w-44 mt-3 rounded-full"></div>
+              <div class="bg-gray-300 h-4 md:w-32 mt-3 rounded-full"></div>
+            </div>
+          </div>
         </div>
-        <div class="col-span-12 md:col-span-6 md:mt-6 z-20">
-          <div class="text-3xl font-medium text-gray-700">
-            Himpunan
-            <span class="text-green-700 font-semibold"
-              >Mahasiswa Islam Melahirkan</span
-            >
-            Banyak Pemimpin
-          </div>
-          <div class="my-4">
-            Sudah tidak di ragukan lagi Himpunan Mahasiswa Islam memang banyak
-            melahirkan pemimpin dari sejak HMI di dirikan hingga sampai saat
-            ini.
-            <br />
-            Kader HMI berkontribusi penuh terhadap pembangunan bangsa tidak
-            hanya di ranah pemerintahan HMI juga hadir sebagi
-            <span class="font-semibold">Agent control off social</span>
-          </div>
+      </div>
+      <!-- endloading skeleton -->
+
+      <div v-else>
+        <!-- card event desktop view -->
+        <div class="grid grid-flow-row grid-cols-12 gap-6 mt-6">
           <div
             class="
-              bg-hijau-button
-              hover:bg-gray-600
-              px-5
-              py-2
-              rounded-full
-              inline-block
-              text-white text-center
+              col-span-12
+              md:col-span-3
+              p-4
+              rounded-lg
+              bg-white
+              border
+              md:block
+              hidden
             "
+            v-for="item in items"
+            :key="item.id"
           >
-            Gabung HMI
+            <nuxt-link :to="'/event-detail/' + item.id">
+              <div>
+                <img
+                  :src="item.image"
+                  alt=""
+                  class="rounded-lg w-full object-cover h-40"
+                />
+              </div>
+              <div
+                class="font-semibold text-gray-700 mt-2"
+                v-if="item.nama.length > 50"
+              >
+                {{ item.nama.substring(0, 50) + '..' }}
+              </div>
+              <div class="font-semibold text-gray-700 mt-2" v-else>
+                {{ item.nama }}
+              </div>
+              <div class="mt-4 flex justify-between">
+                <div class="flex">
+                  <div>
+                    <img
+                      src="~/assets/image/icon/emojione-v1-alarm-clock.svg"
+                      alt=""
+                      class="w-4 mr-2"
+                    />
+                  </div>
+                  <div class="my-auto text-gray-700 text-xs">
+                    {{ item.mulai }}
+                  </div>
+                </div>
+                <div class="flex">
+                  <div>
+                    <img
+                      src="~/assets/image/icon/whh_student.svg"
+                      alt=""
+                      class="w-4 mr-2"
+                    />
+                  </div>
+                  <div class="my-auto text-gray-700 text-xs">100 Peserta</div>
+                </div>
+              </div>
+            </nuxt-link>
           </div>
         </div>
-      </section>
-      <!-- bg-icon -->
-      <div class="absolute top-14 right-0 z-0">
-        <img
-          src="~/assets/image/circle-line2.svg"
-          alt="line"
-          class="md:block hidden"
-        />
-      </div>
-      <div class="absolute top-60 right-20 z-0">
-        <img
-          src="~/assets/image/Dot Grid.svg"
-          alt="line"
-          class="md:block hidden"
-        />
-      </div>
-      <!-- endbg-icon -->
-    </div>
+        <!-- endcard event desktop view -->
 
-    <div class="container md:px-10 px-4 md:my-10 py-10 mt-6">
-      <div class="text-2xl text-gray-700 font-semibold">Event Terbaru</div>
-      <div class="grid grid-flow-row grid-cols-12 gap-6 mt-6">
-        <div
-          class="col-span-12 md:col-span-3 p-4 rounded-lg bg-white"
-          v-for="item in items"
-          :key="item.id"
-        >
-          <nuxt-link :to="'/event-detail/' + item.id">
-            <div>
-              <img
-                :src="item.image"
-                alt=""
-                class="rounded-lg w-full object-cover h-40"
-              />
-            </div>
-            <div
-              class="font-semibold text-gray-700 mt-2"
-              v-if="item.nama.length > 50"
+        <!-- card event mobile view -->
+        <div class="grid grid-flow-row grid-cols-12 gap-6 md:hidden">
+          <div
+            class="col-span-12 md:col-span-3 p-4 rounded-lg bg-white border"
+            v-for="item in items"
+            :key="item.id"
+          >
+            <nuxt-link
+              :to="'/event-detail/' + item.id"
+              class="grid grid-flow-row grid-cols-12 gap-4"
             >
-              {{ item.nama.substring(0, 50) + '..' }}
-            </div>
-            <div class="font-semibold text-gray-700 mt-2" v-else>
-              {{ item.nama }}
-            </div>
-            <div class="mt-4 flex justify-between">
-              <div class="flex">
-                <div>
-                  <img
-                    src="~/assets/image/icon/emojione-v1-alarm-clock.svg"
-                    alt=""
-                    class="w-4 mr-2"
-                  />
+              <div class="col-span-4">
+                <img
+                  :src="item.image"
+                  alt=""
+                  class="rounded-lg object-cover md:h-40 h-full w-full"
+                />
+              </div>
+              <div class="col-span-8">
+                <div
+                  class="font-semibold text-gray-700 mt-2"
+                  v-if="item.nama.length > 50"
+                >
+                  {{ item.nama.substring(0, 30) + '..' }}
                 </div>
-                <div class="my-auto text-gray-700 text-xs">
-                  {{ item.mulai }}
+                <div class="font-semibold text-gray-700 mt-2" v-else>
+                  {{ item.nama }}
+                </div>
+                <div class="mt-4">
+                  <div class="flex mb-4">
+                    <div>
+                      <img
+                        src="~/assets/image/icon/emojione-v1-alarm-clock.svg"
+                        alt=""
+                        class="w-4 mr-2"
+                      />
+                    </div>
+                    <div class="my-auto text-gray-700 text-xs">
+                      {{ item.mulai }}
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <div>
+                      <img
+                        src="~/assets/image/icon/whh_student.svg"
+                        alt=""
+                        class="w-4 mr-2"
+                      />
+                    </div>
+                    <div class="my-auto text-gray-700 text-xs">100 Peserta</div>
+                  </div>
                 </div>
               </div>
-              <div class="flex">
-                <div>
-                  <img
-                    src="~/assets/image/icon/whh_student.svg"
-                    alt=""
-                    class="w-4 mr-2"
-                  />
-                </div>
-                <div class="my-auto text-gray-700 text-xs">100 Peserta</div>
-              </div>
-            </div>
-          </nuxt-link>
+            </nuxt-link>
+          </div>
         </div>
+        <!-- endcard event mobile view -->
       </div>
     </div>
 
@@ -387,9 +425,16 @@
 
 <script>
 export default {
+  layout: 'default',
+  head() {
+    return {
+      title: 'Event HMI Komfaktek Cabang Ciputat',
+    }
+  },
   data() {
     return {
       items: [],
+      isLoading: true,
     }
   },
   mounted() {
@@ -399,7 +444,7 @@ export default {
     async fetchEvent() {
       let resposnes = await this.$axios.get('event').then((ress) => {
         this.items = ress.data.data
-        console.log(this.items)
+        this.isLoading = false
       })
     },
   },
