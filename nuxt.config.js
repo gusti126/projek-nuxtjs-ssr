@@ -24,18 +24,6 @@ export default {
         property: 'og:title',
         content: 'HMI KOMFAKTEK | Melangkah Maju',
       },
-      {
-        hid: 'og:image',
-        name: 'og:image',
-        property: 'og:image',
-        content: 'https://hmi-komfaktek.vercel.app/logo-komfaktek.png',
-      },
-      {
-        hid: 'image',
-        name: 'image',
-        property: 'image',
-        content: 'https://hmi-komfaktek.vercel.app/logo-komfaktek.png',
-      },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
