@@ -294,23 +294,37 @@ export default {
           content: this.shortDesk,
         },
         {
+          hid: 'title',
+          name: 'title',
+          content: this.items.nama + ' | event | HMI Komfaktek Melangkah Maju',
+        },
+        {
+          itemprop: 'title',
+          name: 'title',
+          content: this.items.nama + ' | event | HMI Komfaktek Melangkah Maju',
+        },
+        {
           hid: 'og:title',
           name: 'og:title',
+          property: 'og:title',
           content: this.items.nama + ' | event | HMI Komfaktek Melangkah Maju',
         },
         {
           hid: 'og:site_name',
           name: 'og:site_name',
+          property: 'og:site_name',
           content: ' HMI Komfaktek Melangkah Maju',
         },
         {
           hid: 'og:type',
           name: 'og:type',
+          property: 'og:type',
           content: 'article',
         },
         {
           hid: 'og:url',
           name: 'og:url',
+          property: 'og:url',
           content:
             'https://hmi-komfaktek.vercel.app/event-detail/' +
             this.$route.params.id,
@@ -318,16 +332,29 @@ export default {
         {
           hid: 'og:image',
           name: 'og:image',
+          property: 'og:image',
           content: this.items.image,
         },
         {
           hid: 'image',
           name: 'image',
+          property: 'image',
           content: this.items.image,
+        },
+        {
+          name: 'image',
+          itemprop: 'image',
+          content: this.items.image,
+        },
+        {
+          name: 'description',
+          itemprop: 'description',
+          content: this.shortDesk,
         },
         {
           hid: 'og:description',
           name: 'og:description',
+          property: 'og:description',
           content: this.shortDesk,
         },
       ],
