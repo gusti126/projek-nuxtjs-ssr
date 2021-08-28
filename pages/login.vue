@@ -4,7 +4,7 @@
       <div>
         <div class="bg-white rounded-xl p-4 md:w-3/6 md:mx-auto">
           <div>
-            <img src="~/assets/image/logo-komfaktek.png" alt="" class="w-48" />
+            <img src="~/assets/image/logo-komfaktek.png" alt="" class="w-16" />
           </div>
           <div class="text-4xl font-bold text-hijau-button mt-4">Login</div>
 
@@ -160,7 +160,8 @@ export default {
         {
           itemprop: 'image',
           name: 'image',
-          content: 'https://hmi-komfaktek.vercel.app/logo-komfaktek.png',
+          content:
+            'https://hmi-komfaktek.vercel.app/_nuxt/img/logo-komfaktek.822fb18.png',
         },
         {
           name: 'og:title',
@@ -169,7 +170,8 @@ export default {
         },
         {
           property: 'og:image',
-          content: 'https://hmi-komfaktek.vercel.app/logo-komfaktek.png',
+          content:
+            'https://hmi-komfaktek.vercel.app/_nuxt/img/logo-komfaktek.822fb18.png',
         },
         {
           name: 'og:site_name',
