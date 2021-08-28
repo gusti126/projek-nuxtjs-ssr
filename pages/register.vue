@@ -211,6 +211,73 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: 'Bergabung | event | HMI Komfaktek Melangkah Maju ',
+      meta: [
+        {
+          name: 'description',
+          content: 'bergabung bersama HMI Komfaktek ',
+        },
+        {
+          name: 'title',
+          content: 'Bergabung | event | HMI Komfaktek Melangkah Maju ',
+        },
+        {
+          itemprop: 'title',
+          name: 'title',
+          content: 'Bergabung | event | HMI Komfaktek Melangkah Maju ',
+        },
+        {
+          itemprop: 'image',
+          name: 'image',
+          content: 'https://hmi-komfaktek.vercel.app/logo-komfaktek.png',
+        },
+        {
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Bergabung | event | HMI Komfaktek Melangkah Maju ',
+        },
+        {
+          property: 'og:image',
+          content: 'https://hmi-komfaktek.vercel.app/logo-komfaktek.png',
+        },
+        {
+          name: 'og:site_name',
+          property: 'og:site_name',
+          content: ' HMI Komfaktek Melangkah Maju',
+        },
+        {
+          hid: 'og:type',
+          name: 'og:type',
+          property: 'og:type',
+          content: 'article',
+        },
+
+        {
+          name: 'instagram:card',
+          property: 'instagram:card',
+          content: 'article',
+        },
+        {
+          name: 'description',
+          itemprop: 'description',
+          content: ' | event | HMI Komfaktek Melangkah Maju ',
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: 'Bergabung | event | HMI Komfaktek Melangkah Maju ',
+        },
+        {
+          name: 'og:description',
+          itemprop: 'og:description',
+          content: 'Bergabung | event | HMI Komfaktek Melangkah Maju ',
+        },
+      ],
+    }
+  },
   data() {
     return {
       user: {
