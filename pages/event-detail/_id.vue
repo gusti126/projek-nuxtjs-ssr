@@ -74,11 +74,7 @@
         <div class="col-span-12 md:col-span-8">
           <div class="bg-white rounded-lg p-6">
             <div>
-              <img
-                src="https://lorempixel.com/400/200/technics/"
-                alt=""
-                class="w-full rounded-lg"
-              />
+              <img :src="items.image" alt="" class="w-full rounded-lg" />
             </div>
             <div class="text-2xl font-semibold text-gray-700 mt-4">
               {{ items.nama }}
@@ -291,6 +287,50 @@ export default {
   head() {
     return {
       title: this.items.nama + ' | event | HMI Komfaktek Melangkah Maju',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.shortDesk,
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: this.items.nama + ' | event | HMI Komfaktek Melangkah Maju',
+        },
+        {
+          hid: 'og:site_name',
+          name: 'og:site_name',
+          content: ' HMI Komfaktek Melangkah Maju',
+        },
+        {
+          hid: 'og:type',
+          name: 'og:type',
+          content: 'article',
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content:
+            'https://hmi-komfaktek.vercel.app/event-detail/' +
+            this.$route.params.id,
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: this.items.image,
+        },
+        {
+          hid: 'image',
+          name: 'image',
+          content: this.items.image,
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.shortDesk,
+        },
+      ],
     }
   },
   data() {
