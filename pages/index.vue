@@ -400,7 +400,7 @@ export default {
           hid: 'image',
           name: 'image',
           property: 'image',
-          content: '~/static/logo-komfaktek.png',
+          content: 'https://hmi-komfaktek.vercel.app/logo-komfaktek.png',
         },
       ],
     }
