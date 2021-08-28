@@ -402,6 +402,11 @@ export default {
           property: 'image',
           content: 'https://hmi-komfaktek.vercel.app/logo-komfaktek.png',
         },
+        {
+          itemprop: 'image',
+          name: 'image',
+          content: 'https://hmi-komfaktek.vercel.app/logo-komfaktek.png',
+        },
       ],
     }
   },

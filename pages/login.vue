@@ -160,8 +160,7 @@ export default {
         {
           itemprop: 'image',
           name: 'image',
-          content:
-            'https://hmi-komfaktek.vercel.app/_nuxt/img/logo-komfaktek.822fb18.png',
+          content: 'https://hmi-komfaktek.vercel.app/logo-komfaktek.png',
         },
         {
           name: 'og:title',
@@ -170,8 +169,7 @@ export default {
         },
         {
           property: 'og:image',
-          content:
-            'https://hmi-komfaktek.vercel.app/_nuxt/img/logo-komfaktek.822fb18.png',
+          content: 'https://hmi-komfaktek.vercel.app/logo-komfaktek.png',
         },
         {
           name: 'og:site_name',
