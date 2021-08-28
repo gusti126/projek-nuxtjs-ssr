@@ -296,7 +296,9 @@ export default {
         },
         {
           name: 'title',
-          content: this.items.nama + ' | event | HMI Komfaktek Melangkah Maju',
+          content:
+            this.detailEventasync.data.nama +
+            ' | event | HMI Komfaktek Melangkah Maju dari function asycn',
         },
         {
           itemprop: 'title',
