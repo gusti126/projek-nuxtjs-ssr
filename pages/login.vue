@@ -142,8 +142,7 @@
 export default {
   head() {
     return {
-      title:
-        'Bergabung | event | HMI Komfaktek Melangkah Maju dari function asycn',
+      title: 'Bergabung | event | HMI Komfaktek Melangkah Maju ',
       meta: [
         {
           name: 'description',
@@ -151,14 +150,12 @@ export default {
         },
         {
           name: 'title',
-          content:
-            'Bergabung | event | HMI Komfaktek Melangkah Maju dari function asycn',
+          content: 'Bergabung | event | HMI Komfaktek Melangkah Maju ',
         },
         {
           itemprop: 'title',
           name: 'title',
-          content:
-            'Bergabung | event | HMI Komfaktek Melangkah Maju dari function asycn',
+          content: 'Bergabung | event | HMI Komfaktek Melangkah Maju ',
         },
         {
           itemprop: 'image',
@@ -169,8 +166,7 @@ export default {
         {
           name: 'og:title',
           property: 'og:title',
-          content:
-            'Bergabung | event | HMI Komfaktek Melangkah Maju dari function asycn',
+          content: 'Bergabung | event | HMI Komfaktek Melangkah Maju ',
         },
         {
           property: 'og:image',
@@ -197,21 +193,18 @@ export default {
         {
           name: 'description',
           itemprop: 'description',
-          content:
-            ' | event | HMI Komfaktek Melangkah Maju dari function asycn',
+          content: ' | event | HMI Komfaktek Melangkah Maju ',
         },
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content:
-            'Bergabung | event | HMI Komfaktek Melangkah Maju dari function asycn',
+          content: 'Bergabung | event | HMI Komfaktek Melangkah Maju ',
         },
         {
           name: 'og:description',
           itemprop: 'og:description',
-          content:
-            'Bergabung | event | HMI Komfaktek Melangkah Maju dari function asycn',
+          content: 'Bergabung | event | HMI Komfaktek Melangkah Maju ',
         },
       ],
     }
