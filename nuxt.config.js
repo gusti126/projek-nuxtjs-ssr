@@ -11,10 +11,48 @@ export default {
         content:
           'Himpunan Mahasiswa Islam Komisariat Fakultas Teknik Cabang Ciputat',
       },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        property: 'og:description',
+        content:
+          'terbinanya insan akademis, pencipta, pengabdi yang bernafaskan Islam, dan bertangung jawab atas terwujudnya masyarakat adil makmur yang diridhoi Allah SWT ',
+      },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        property: 'og:title',
+        content: 'HMI KOMFAKTEK | Melangkah Maju',
+      },
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        property: 'og:image',
+        content: 'https://hmi-komfaktek.vercel.app/logo-komfaktek.png',
+      },
+      {
+        hid: 'image',
+        name: 'image',
+        property: 'image',
+        content: 'https://hmi-komfaktek.vercel.app/logo-komfaktek.png',
+      },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/png', href: '/logo-komfaktek.png' },
+      {
+        rel: 'shortcut icon',
+        hid: 'shortcut-icon',
+        type: 'image/png',
+        href: '/logo-komfaktek.png',
+      },
+      {
+        rel: 'apple-touch-icon',
+        hid: 'apple-touch-icon',
+        type: 'image/png',
+        href: '/logo-komfaktek.png',
+      },
+
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap',
