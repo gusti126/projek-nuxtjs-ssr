@@ -288,7 +288,7 @@ export default {
     return {
       title:
         this.detailEventasync.data.nama +
-        ' | event | HMI Komfaktek Melangkah Maju dari function asycn',
+        ' | event | HMI Komfaktek Melangkah Maju',
       meta: [
         {
           name: 'description',
@@ -298,21 +298,21 @@ export default {
           name: 'title',
           content:
             this.detailEventasync.data.nama +
-            ' | event | HMI Komfaktek Melangkah Maju dari function asycn',
+            ' | event | HMI Komfaktek Melangkah Maju',
         },
         {
           itemprop: 'title',
           name: 'title',
           content:
             this.detailEventasync.data.nama +
-            ' | event | HMI Komfaktek Melangkah Maju dari function asycn',
+            ' | event | HMI Komfaktek Melangkah Maju',
         },
         {
           name: 'og:title',
           property: 'og:title',
           content:
             this.detailEventasync.data.nama +
-            ' | event | HMI Komfaktek Melangkah Maju dari function asycn',
+            ' | event | HMI Komfaktek Melangkah Maju',
         },
         {
           name: 'og:site_name',
@@ -336,17 +336,17 @@ export default {
         {
           name: 'og:image',
           property: 'og:image',
-          content: this.items.image,
+          content: this.detailEventasync.data.image,
         },
         {
           name: 'image',
           property: 'image',
-          content: this.items.image,
+          content: this.detailEventasync.data.image,
         },
         {
           name: 'instagram:title',
           property: 'instagram:title',
-          content: 'instagram title' + this.items.nama,
+          content: 'instagram title' + this.detailEventasync.data.nama,
         },
         {
           name: 'instagram:card',
@@ -356,29 +356,23 @@ export default {
         {
           name: 'image',
           itemprop: 'image',
-          content: this.items.image,
+          content: this.detailEventasync.data.image,
         },
         {
           name: 'description',
           itemprop: 'description',
-          content:
-            this.detailEventasync.data.nama +
-            ' | event | HMI Komfaktek Melangkah Maju dari function asycn',
+          content: this.detailEventasync.data.deskripsi,
         },
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content:
-            this.detailEventasync.data.nama +
-            ' | event | HMI Komfaktek Melangkah Maju dari function asycn',
+          content: this.detailEventasync.data.deskripsi,
         },
         {
           name: 'og:description',
           itemprop: 'og:description',
-          content:
-            this.detailEventasync.data.nama +
-            ' | event | HMI Komfaktek Melangkah Maju dari function asycn',
+          content: this.detailEventasync.data.deskripsi,
         },
       ],
     }
