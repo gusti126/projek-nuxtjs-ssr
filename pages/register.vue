@@ -4,7 +4,7 @@
       <div>
         <div class="bg-white rounded-xl p-3 md:p-4 md:w-3/6 md:mx-auto">
           <div>
-            <img src="~/assets/image/logo-komfaktek.png" alt="" class="w-48" />
+            <img src="~/assets/image/logo-komfaktek.png" alt="" class="w-16" />
           </div>
           <div class="text-4xl font-bold text-hijau-button mt-4">Register</div>
 

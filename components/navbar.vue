@@ -19,7 +19,7 @@
         <div>
           <nuxt-link to="/">
             <img
-              src="~/assets/image/logo-komfaktek.png"
+              src="~/assets/image/logo-komfaktek1.png"
               alt="logo"
               class="h-10 w-auto"
             />
