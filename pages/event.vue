@@ -419,6 +419,19 @@
       </div>
     </div>
 
+    <div>
+      <Flicking :options="{ align: 'prev', circular: true }">
+        <div class="panel">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem
+          corporis in pariatur nam, veritatis dignissimos excepturi sed fugit
+          itaque, eaque quas atque saepe? In, nulla. Animi nisi iusto excepturi
+          dolorem?
+        </div>
+        <div class="panel">2</div>
+        <div class="panel">3</div>
+      </Flicking>
+    </div>
+
     <cfooter />
   </div>
 </template>

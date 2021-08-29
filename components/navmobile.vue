@@ -43,7 +43,7 @@
           Home
         </div>
       </nuxt-link>
-      <a href="galang.html" class="">
+      <nuxt-link to="/galang-dana" class="">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-8 w-8 mx-auto"
@@ -66,14 +66,14 @@
         <div
           class="font-semibold text-sm"
           :class="
-            this.$route.path === '/peduli-umat'
+            this.$route.path === '/galang-dana'
               ? 'text-green-700'
               : 'text-gray-500'
           "
         >
           Peduli
         </div>
-      </a>
+      </nuxt-link>
       <a href="tulisan.html" class="">
         <svg
           xmlns="http://www.w3.org/2000/svg"
