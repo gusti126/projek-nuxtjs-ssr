@@ -166,6 +166,7 @@
       </div>
     </section>
     <!-- end step illustator -->
+
     <section class="mt-8">
       <div class="container px-2 md:px-10 my-4 mb-20">
         <div
@@ -843,6 +844,7 @@
         </div>
       </div>
     </section>
+
     <Cfooter />
   </div>
 </template>

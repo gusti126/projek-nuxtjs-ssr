@@ -722,16 +722,6 @@
     </div>
     <!-- end konten galang dana -->
 
-    <Flicking
-      :options="{ moveType: 'freeScroll', bound: true, circular: true }"
-    >
-      <div class="bg-hijau-button p-4 mx-4" style="width: 120px">1</div>
-      <div class="bg-hijau-button p-4 mx-4" style="width: 20%">2</div>
-      <div class="bg-hijau-button p-4 mx-4" style="width: 500px">3</div>
-      <div class="bg-hijau-button p-4 mx-4" style="width: 300px">4</div>
-      <div class="bg-hijau-button p-4 mx-4" style="width: 100%">5</div>
-    </Flicking>
-
     <cfooter />
   </div>
 </template>

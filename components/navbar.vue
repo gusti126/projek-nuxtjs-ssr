@@ -32,8 +32,8 @@
           <a href="tulisan.html" class="ml-8 hover:text-green-700 my-auto"
             >Tulisan</a
           >
-          <a href="galang.html" class="ml-8 hover:text-green-700 my-auto"
-            >Galang Dana</a
+          <nuxt-link to="/galang-dana" class="ml-8 hover:text-green-700 my-auto"
+            >Galang Dana</nuxt-link
           >
           <a href="gabung.html" class="ml-8 hover:text-green-700 my-auto"
             >Gabung HMI</a
