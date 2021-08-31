@@ -182,13 +182,15 @@
               md:rounded-lg md:pb-0
               pb-2
             "
+            v-for="item in items"
+            :key="item.id"
           >
-            <a href="detailgalang.html">
+            <nuxt-link :to="'/galang-dana-detail/' + item.id">
               <div class="md:block">
                 <!-- image atau thumbnail -->
                 <div class="">
                   <img
-                    src="~assets/image/Instagram post - 6.png"
+                    :src="item.thumbnail"
                     alt=""
                     class="
                       w-full
@@ -211,7 +213,7 @@
                       mt-2
                     "
                   >
-                    Galang Dana Untuk Palestina Bersam HMI KOMFAKTEK
+                    {{ item.judul }}
                   </div>
                   <!-- location -->
                   <div class="flex items-center mt-2">
@@ -227,7 +229,9 @@
                         clip-rule="evenodd"
                       />
                     </svg>
-                    <div class="text-gray-600 md:text-sm text-xs">Bandung</div>
+                    <div class="text-gray-600 md:text-sm text-xs">
+                      {{ item.kota }}
+                    </div>
                   </div>
                   <!-- progresbar -->
                   <div class="mt-2 flex">
@@ -235,7 +239,7 @@
                     <div
                       class="font-medium text-xs md:text-base text-right w-full"
                     >
-                      Rp. 70.000.000
+                      Rp.{{ item.goal_amount | currency }}
                     </div>
                   </div>
                   <div
@@ -281,565 +285,7 @@
                 </div>
                 <div class="text-green-900 font-semibold flex"></div>
               </div>
-            </a>
-          </div>
-
-          <div
-            class="
-              bg-white
-              border
-              md:p-4
-              p-1
-              rounded
-              md:rounded-lg md:pb-0
-              pb-2
-            "
-          >
-            <a href="detailgalang.html">
-              <div class="md:block">
-                <!-- image atau thumbnail -->
-                <div class="">
-                  <img
-                    src="~assets/image/Instagram post - 7.png"
-                    alt=""
-                    class="
-                      w-full
-                      rounded
-                      md:rounded-lg md:h-44
-                      h-20
-                      object-cover
-                    "
-                  />
-                </div>
-                <!-- deskripsi -->
-                <div class="">
-                  <!-- title atau name -->
-                  <div
-                    class="
-                      text-green-900
-                      font-semibold
-                      text-xs
-                      md:text-base
-                      mt-2
-                    "
-                  >
-                    Ayok Qurban Bersama Rakyat Pamulang
-                  </div>
-                  <!-- location -->
-                  <div class="flex items-center mt-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="md:h-5 md:w-5 h-4 w-4 text-green-500 mr-2"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <div class="text-gray-600 md:text-sm text-xs">Bandung</div>
-                  </div>
-                  <!-- progresbar -->
-                  <div class="mt-2 flex">
-                    <div class="font-medium text-xs md:text-base">50%</div>
-                    <div
-                      class="font-medium text-xs md:text-base text-right w-full"
-                    >
-                      Rp. 70.000.000
-                    </div>
-                  </div>
-                  <div
-                    class="w-full bg-gray-200 mt-2 rounded-full hover:hidden"
-                  >
-                    <div
-                      class="
-                        bg-green-500
-                        text-xs
-                        leading-none
-                        md:py-1 md:h-5
-                        font-medium
-                        text-center text-white
-                        rounded-full
-                      "
-                      style="width: 50%"
-                    >
-                      50%
-                    </div>
-                  </div>
-                  <!-- end profressbar -->
-                  <!-- button found -->
-                  <div class="w-full items-stretch">
-                    <a
-                      href=""
-                      class="
-                        rounded-full
-                        text-center
-                        mt-3
-                        bg-green-700
-                        w-full
-                        md:py-1
-                        text-white
-                        md:font-medium
-                        hidden
-                        md:block md:mb-4
-                        my-auto
-                      "
-                      >Fund</a
-                    >
-                  </div>
-                  <!-- endbutton Fund -->
-                </div>
-                <div class="text-green-900 font-semibold flex"></div>
-              </div>
-            </a>
-          </div>
-          <div
-            class="
-              bg-white
-              border
-              md:p-4
-              p-1
-              rounded
-              md:rounded-lg md:pb-0
-              pb-2
-            "
-          >
-            <a href="detailgalang.html">
-              <div class="md:block">
-                <!-- image atau thumbnail -->
-                <div class="">
-                  <img
-                    src="~assets/image/Instagram post - 6.png"
-                    alt=""
-                    class="
-                      w-full
-                      rounded
-                      md:rounded-lg md:h-44
-                      h-20
-                      object-cover
-                    "
-                  />
-                </div>
-                <!-- deskripsi -->
-                <div class="">
-                  <!-- title atau name -->
-                  <div
-                    class="
-                      text-green-900
-                      font-semibold
-                      text-xs
-                      md:text-base
-                      mt-2
-                    "
-                  >
-                    Galang Dana Untuk Palestina Bersam HMI KOMFAKTEK
-                  </div>
-                  <!-- location -->
-                  <div class="flex items-center mt-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="md:h-5 md:w-5 h-4 w-4 text-green-500 mr-2"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <div class="text-gray-600 md:text-sm text-xs">Bandung</div>
-                  </div>
-                  <!-- progresbar -->
-                  <div class="mt-2 flex">
-                    <div class="font-medium text-xs md:text-base">50%</div>
-                    <div
-                      class="font-medium text-xs md:text-base text-right w-full"
-                    >
-                      Rp. 70.000.000
-                    </div>
-                  </div>
-                  <div
-                    class="w-full bg-gray-200 mt-2 rounded-full hover:hidden"
-                  >
-                    <div
-                      class="
-                        bg-green-500
-                        text-xs
-                        leading-none
-                        md:py-1 md:h-5
-                        font-medium
-                        text-center text-white
-                        rounded-full
-                      "
-                      style="width: 50%"
-                    >
-                      50%
-                    </div>
-                  </div>
-                  <!-- end profressbar -->
-                  <!-- button found -->
-                  <div class="w-full items-stretch">
-                    <a
-                      href=""
-                      class="
-                        rounded-full
-                        text-center
-                        mt-3
-                        bg-green-700
-                        w-full
-                        md:py-1
-                        text-white
-                        md:font-medium
-                        hidden
-                        md:block md:mb-4
-                        my-auto
-                      "
-                      >Fund</a
-                    >
-                  </div>
-                  <!-- endbutton Fund -->
-                </div>
-                <div class="text-green-900 font-semibold flex"></div>
-              </div>
-            </a>
-          </div>
-
-          <div
-            class="
-              bg-white
-              border
-              md:p-4
-              p-1
-              rounded
-              md:rounded-lg md:pb-0
-              pb-2
-            "
-          >
-            <a href="detailgalang.html">
-              <div class="md:block">
-                <!-- image atau thumbnail -->
-                <div class="">
-                  <img
-                    src="~assets/image/Instagram post - 7.png"
-                    alt=""
-                    class="
-                      w-full
-                      rounded
-                      md:rounded-lg md:h-44
-                      h-20
-                      object-cover
-                    "
-                  />
-                </div>
-                <!-- deskripsi -->
-                <div class="">
-                  <!-- title atau name -->
-                  <div
-                    class="
-                      text-green-900
-                      font-semibold
-                      text-xs
-                      md:text-base
-                      mt-2
-                    "
-                  >
-                    Ayok Qurban Bersama Rakyat Pamulang
-                  </div>
-                  <!-- location -->
-                  <div class="flex items-center mt-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="md:h-5 md:w-5 h-4 w-4 text-green-500 mr-2"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <div class="text-gray-600 md:text-sm text-xs">Bandung</div>
-                  </div>
-                  <!-- progresbar -->
-                  <div class="mt-2 flex">
-                    <div class="font-medium text-xs md:text-base">50%</div>
-                    <div
-                      class="font-medium text-xs md:text-base text-right w-full"
-                    >
-                      Rp. 70.000.000
-                    </div>
-                  </div>
-                  <div
-                    class="w-full bg-gray-200 mt-2 rounded-full hover:hidden"
-                  >
-                    <div
-                      class="
-                        bg-green-500
-                        text-xs
-                        leading-none
-                        md:py-1 md:h-5
-                        font-medium
-                        text-center text-white
-                        rounded-full
-                      "
-                      style="width: 50%"
-                    >
-                      50%
-                    </div>
-                  </div>
-                  <!-- end profressbar -->
-                  <!-- button found -->
-                  <div class="w-full items-stretch">
-                    <a
-                      href=""
-                      class="
-                        rounded-full
-                        text-center
-                        mt-3
-                        bg-green-700
-                        w-full
-                        md:py-1
-                        text-white
-                        md:font-medium
-                        hidden
-                        md:block md:mb-4
-                        my-auto
-                      "
-                      >Fund</a
-                    >
-                  </div>
-                  <!-- endbutton Fund -->
-                </div>
-                <div class="text-green-900 font-semibold flex"></div>
-              </div>
-            </a>
-          </div>
-          <div
-            class="
-              bg-white
-              border
-              md:p-4
-              p-1
-              rounded
-              md:rounded-lg md:pb-0
-              pb-2
-            "
-          >
-            <a href="detailgalang.html">
-              <div class="md:block">
-                <!-- image atau thumbnail -->
-                <div class="">
-                  <img
-                    src="~assets/image/Instagram post - 6.png"
-                    alt=""
-                    class="
-                      w-full
-                      rounded
-                      md:rounded-lg md:h-44
-                      h-20
-                      object-cover
-                    "
-                  />
-                </div>
-                <!-- deskripsi -->
-                <div class="">
-                  <!-- title atau name -->
-                  <div
-                    class="
-                      text-green-900
-                      font-semibold
-                      text-xs
-                      md:text-base
-                      mt-2
-                    "
-                  >
-                    Galang Dana Untuk Palestina Bersam HMI KOMFAKTEK
-                  </div>
-                  <!-- location -->
-                  <div class="flex items-center mt-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="md:h-5 md:w-5 h-4 w-4 text-green-500 mr-2"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <div class="text-gray-600 md:text-sm text-xs">Bandung</div>
-                  </div>
-                  <!-- progresbar -->
-                  <div class="mt-2 flex">
-                    <div class="font-medium text-xs md:text-base">50%</div>
-                    <div
-                      class="font-medium text-xs md:text-base text-right w-full"
-                    >
-                      Rp. 70.000.000
-                    </div>
-                  </div>
-                  <div
-                    class="w-full bg-gray-200 mt-2 rounded-full hover:hidden"
-                  >
-                    <div
-                      class="
-                        bg-green-500
-                        text-xs
-                        leading-none
-                        md:py-1 md:h-5
-                        font-medium
-                        text-center text-white
-                        rounded-full
-                      "
-                      style="width: 50%"
-                    >
-                      50%
-                    </div>
-                  </div>
-                  <!-- end profressbar -->
-                  <!-- button found -->
-                  <div class="w-full items-stretch">
-                    <a
-                      href=""
-                      class="
-                        rounded-full
-                        text-center
-                        mt-3
-                        bg-green-700
-                        w-full
-                        md:py-1
-                        text-white
-                        md:font-medium
-                        hidden
-                        md:block md:mb-4
-                        my-auto
-                      "
-                      >Fund</a
-                    >
-                  </div>
-                  <!-- endbutton Fund -->
-                </div>
-                <div class="text-green-900 font-semibold flex"></div>
-              </div>
-            </a>
-          </div>
-
-          <div
-            class="
-              bg-white
-              border
-              md:p-4
-              p-1
-              rounded
-              md:rounded-lg md:pb-0
-              pb-2
-            "
-          >
-            <a href="detailgalang.html">
-              <div class="md:block">
-                <!-- image atau thumbnail -->
-                <div class="">
-                  <img
-                    src="~assets/image/Instagram post - 7.png"
-                    alt=""
-                    class="
-                      w-full
-                      rounded
-                      md:rounded-lg md:h-44
-                      h-20
-                      object-cover
-                    "
-                  />
-                </div>
-                <!-- deskripsi -->
-                <div class="">
-                  <!-- title atau name -->
-                  <div
-                    class="
-                      text-green-900
-                      font-semibold
-                      text-xs
-                      md:text-base
-                      mt-2
-                    "
-                  >
-                    Ayok Qurban Bersama Rakyat Pamulang
-                  </div>
-                  <!-- location -->
-                  <div class="flex items-center mt-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="md:h-5 md:w-5 h-4 w-4 text-green-500 mr-2"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <div class="text-gray-600 md:text-sm text-xs">Bandung</div>
-                  </div>
-                  <!-- progresbar -->
-                  <div class="mt-2 flex">
-                    <div class="font-medium text-xs md:text-base">50%</div>
-                    <div
-                      class="font-medium text-xs md:text-base text-right w-full"
-                    >
-                      Rp. 70.000.000
-                    </div>
-                  </div>
-                  <div
-                    class="w-full bg-gray-200 mt-2 rounded-full hover:hidden"
-                  >
-                    <div
-                      class="
-                        bg-green-500
-                        text-xs
-                        leading-none
-                        md:py-1 md:h-5
-                        font-medium
-                        text-center text-white
-                        rounded-full
-                      "
-                      style="width: 50%"
-                    >
-                      50%
-                    </div>
-                  </div>
-                  <!-- end profressbar -->
-                  <!-- button found -->
-                  <div class="w-full items-stretch">
-                    <a
-                      href=""
-                      class="
-                        rounded-full
-                        text-center
-                        mt-3
-                        bg-green-700
-                        w-full
-                        md:py-1
-                        text-white
-                        md:font-medium
-                        hidden
-                        md:block md:mb-4
-                        my-auto
-                      "
-                      >Fund</a
-                    >
-                  </div>
-                  <!-- endbutton Fund -->
-                </div>
-                <div class="text-green-900 font-semibold flex"></div>
-              </div>
-            </a>
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -848,3 +294,26 @@
     <Cfooter />
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      items: [],
+    }
+  },
+
+  mounted() {
+    this.getGalangDana()
+  },
+
+  methods: {
+    async getGalangDana() {
+      let data = await this.$axios.get('galang-dana').then((ress) => {
+        this.items = ress.data.data
+        console.log(this.items)
+      })
+    },
+  },
+}
+</script>

@@ -48,8 +48,8 @@
             beserta 14 orang mahasiswa Sekolah Tinggi Islam
           </div>
           <div class="md:mt-10 mt-6 text-center md:text-left">
-            <a
-              href=""
+            <nuxt-link
+              to="/galang-dana"
               class="
                 bg-hijau-button
                 hover:bg-opacity-0 hover:border-opacity-100
@@ -60,7 +60,7 @@
                 px-8
                 mr-6
               "
-              >Peduli Umat</a
+              >Peduli Umat</nuxt-link
             >
             <nuxt-link
               to="register"
