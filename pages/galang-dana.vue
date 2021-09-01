@@ -297,6 +297,79 @@
 
 <script>
 export default {
+  head() {
+    return {
+      meta: [
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          property: 'og:image',
+          itemprop: 'image',
+          content: 'https://gustirizkia.my.id/thumbnail-galang-dana-page.jpg',
+        },
+        {
+          hid: 'image',
+          name: 'image',
+          itemprop: 'image',
+          property: 'image',
+          content: 'https://gustirizkia.my.id/thumbnail-galang-dana-page.jpg',
+        },
+        {
+          hid: 'og:type',
+          name: 'og:type',
+          itemprop: 'og:type',
+          property: 'og:type',
+          content: 'website',
+        },
+        {
+          hid: 'og:image:width',
+          name: 'og:image:width',
+          itemprop: 'og:image:width',
+          property: 'og:image:width',
+          content: '300',
+        },
+        {
+          hid: 'og:image:height',
+          name: 'og:image:height',
+          itemprop: 'og:image:height',
+          property: 'og:image:height',
+          content: '300',
+        },
+        {
+          itemprop: 'width',
+          content: '300',
+        },
+        {
+          itemprop: 'height',
+          content: '300',
+        },
+        {
+          itemprop: 'image',
+          name: 'image',
+          content: 'https://gustirizkia.my.id/thumbnail-galang-dana-page.jpg',
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Himpunan Mahasiswa Islam Komisariat Fakultas Teknik Cabang Ciputat',
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content:
+            'HMI program peduli umat, fitur donasi dan galang dana. Mari bergotong royong',
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'HMI KOMFAKTEK | Melangkah Maju',
+        },
+      ],
+    }
+  },
   data() {
     return {
       items: [],

@@ -441,7 +441,56 @@ export default {
   layout: 'default',
   head() {
     return {
-      title: 'Event HMI Komfaktek Cabang Ciputat',
+      meta: [
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          property: 'og:image',
+          itemprop: 'image',
+          content: 'https://gustirizkia.my.id/logo-komfaktek14.jpg',
+        },
+        {
+          hid: 'image',
+          name: 'image',
+          itemprop: 'image',
+          property: 'image',
+          content: 'https://gustirizkia.my.id/logo-komfaktek14.jpg',
+        },
+        {
+          hid: 'og:type',
+          name: 'og:type',
+          itemprop: 'og:type',
+          property: 'og:type',
+          content: 'website',
+        },
+        {
+          hid: 'og:image:width',
+          name: 'og:image:width',
+          itemprop: 'og:image:width',
+          property: 'og:image:width',
+          content: '300',
+        },
+        {
+          hid: 'og:image:height',
+          name: 'og:image:height',
+          itemprop: 'og:image:height',
+          property: 'og:image:height',
+          content: '300',
+        },
+        {
+          itemprop: 'width',
+          content: '300',
+        },
+        {
+          itemprop: 'height',
+          content: '300',
+        },
+        {
+          itemprop: 'image',
+          name: 'image',
+          content: 'https://gustirizkia.my.id/logo-komfaktek14.jpg',
+        },
+      ],
     }
   },
   data() {

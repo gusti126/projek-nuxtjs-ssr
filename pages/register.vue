@@ -268,7 +268,8 @@ export default {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: 'Bergabung | event | HMI Komfaktek Melangkah Maju ',
+          content:
+            'Bergabung | event | HMI Komfaktek Melangkah Maju Terkoneksi Dengan Seluruh Cabang HMI Se Indonesia',
         },
         {
           name: 'og:description',
