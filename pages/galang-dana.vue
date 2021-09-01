@@ -365,7 +365,7 @@ export default {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: 'HMI KOMFAKTEK | Melangkah Maju',
+          content: 'HMI KOMFAKTEK | PROGRAM PEDULI UMAT',
         },
       ],
     }
