@@ -395,14 +395,14 @@ export default {
           name: 'og:image',
           property: 'og:image',
           itemprop: 'image',
-          content: 'https://hmi-komfaktek.vercel.app/logo-komfaktek.png',
+          content: 'https://hmi-komfaktek.vercel.app/logo-komfaktek4.jpg',
         },
         {
           hid: 'image',
           name: 'image',
           itemprop: 'image',
           property: 'image',
-          content: 'https://hmi-komfaktek.vercel.app/logo-komfaktek.png',
+          content: 'https://hmi-komfaktek.vercel.app/logo-komfaktek4.jpg',
         },
         {
           hid: 'og:type',
@@ -436,7 +436,7 @@ export default {
         {
           itemprop: 'image',
           name: 'image',
-          content: 'https://hmi-komfaktek.vercel.app/logo-komfaktek.png',
+          content: 'https://hmi-komfaktek.vercel.app/logo-komfaktek4.jpg',
         },
       ],
     }
