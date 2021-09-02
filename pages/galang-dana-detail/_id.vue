@@ -21,7 +21,7 @@
     >
       <div class="mb-1">
         <input
-          type="number"
+          type="text"
           v-model="amountFund"
           class="border border-green-500 w-full rounded-lg px-2 py-1"
         />
@@ -433,7 +433,11 @@ export default {
   },
 
   watch: {
-    amountFund(val) {},
+    amountFund(val) {
+      // console.log(val)
+      // let tes = new Intl.NumberFormat(['ban', 'id']).format(val)
+      // this.amountFund = tes
+    },
   },
 }
 </script>
