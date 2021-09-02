@@ -294,7 +294,8 @@
             hanya di ranah pemerintahan HMI juga hadir sebagi
             <span class="font-semibold">Agent control off social</span>
           </div>
-          <div
+          <nuxt-link
+            to="/daftar-hmi"
             class="
               bg-hijau-button
               hover:bg-gray-600
@@ -306,7 +307,7 @@
             "
           >
             Gabung HMI
-          </div>
+          </nuxt-link>
         </div>
       </section>
       <!-- bg-icon -->
@@ -454,7 +455,6 @@ export default {
     async fetchEvent() {
       let resposnes = await this.$axios.get('event').then((ress) => {
         this.items = ress.data.data
-        console.log(this.items)
       })
     },
   },
