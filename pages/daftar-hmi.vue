@@ -504,12 +504,12 @@ export default {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: 'Bergabung | event | HMI Komfaktek Melangkah Maju ',
+          content: 'Daftar | Basic Training | HMI Komfaktek Melangkah Maju ',
         },
         {
           name: 'og:description',
           itemprop: 'og:description',
-          content: 'Bergabung | event | HMI Komfaktek Melangkah Maju ',
+          content: 'Daftar | Basic Training | HMI Komfaktek Melangkah Maju ',
         },
       ],
     }
