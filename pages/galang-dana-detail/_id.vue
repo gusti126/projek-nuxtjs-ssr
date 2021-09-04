@@ -28,12 +28,12 @@
         <div class="text-left font-medium">Rp.{{ amountFund | currency }}</div>
       </div>
 
-      <a
-        href=""
+      <div
+        @click="createFund"
         class="w-full block rounded-lg bg-green-500 text-white font-medium py-2"
       >
         Fund
-      </a>
+      </div>
     </div>
 
     <!-- header -->
@@ -53,7 +53,7 @@
       >
         <navbar />
       </div>
-      <div class="container md:-mt-40 md:px-10">
+      <div class="md:-mt-40 md:px-10">
         <div
           class="
             grid
@@ -61,20 +61,28 @@
             md:grid-cols-6
             grid-cols-1 grid-flow-row
             gap-2
-            md:gap-4
-            px-4
-            md:px-0
+            md:gap-4 md:px-0
           "
         >
           <div
-            class="lg:col-span-3 col-span-4 md:bg-white md:p-8 p-0 rounded-2xl"
+            class="
+              lg:col-span-3
+              col-span-4
+              md:bg-white md:p-8
+              p-0
+              md:rounded-2xl
+            "
           >
             <div>
-              <img :src="item.thumbnail" alt="ok" class="w-full rounded-2xl" />
+              <img
+                :src="item.thumbnail"
+                alt="ok"
+                class="w-full md:rounded-2xl"
+              />
             </div>
 
             <!-- deskripsi -->
-            <div class="my-4">
+            <div class="my-4 px-3 md:px-0">
               <!-- title atau name -->
               <div
                 class="text-green-900 font-semibold text-xl md:text-3xl mt-2"
@@ -153,11 +161,11 @@
               <!-- end profressbar -->
             </div>
 
-            <div class="">
+            <div class="px-3 md:px-0">
               {{ item.deskripsi }}
             </div>
           </div>
-          <div class="col-span-2 lg:col-span-1">
+          <div class="col-span-4 lg:col-span-1 px-3 md:px-0">
             <div class="bg-white p-4 rounded-2xl sticky top-4">
               <div class="flex">
                 <div>
@@ -310,6 +318,7 @@
                     text-white
                     font-medium
                   "
+                  @click="createFund"
                 >
                   Fund
                 </button>
@@ -412,6 +421,91 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: this.item.judul + ' | HMI Komfaktek Melangkah Peduli Umat',
+      meta: [
+        {
+          name: 'description',
+          content: this.item.deskripsi,
+        },
+        {
+          name: 'title',
+          content: this.item.judul + ' | HMI Komfaktek Melangkah Peduli Umat',
+        },
+        {
+          itemprop: 'title',
+          name: 'title',
+          content: this.item.judul + ' | HMI Komfaktek Melangkah Peduli Umat',
+        },
+        {
+          name: 'og:title',
+          property: 'og:title',
+          content: this.item.judul + ' | HMI Komfaktek Melangkah Peduli Umat',
+        },
+        {
+          name: 'og:site_name',
+          property: 'og:site_name',
+          content: ' HMI Komfaktek Melangkah Maju',
+        },
+        {
+          hid: 'og:type',
+          name: 'og:type',
+          property: 'og:type',
+          content: 'article',
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          property: 'og:url',
+          content:
+            'https://hmi-komfaktek.vercel.app/event-detail/' +
+            this.$route.params.id,
+        },
+        {
+          name: 'og:image',
+          property: 'og:image',
+          content: this.item.thumbnail,
+        },
+        {
+          name: 'image',
+          property: 'image',
+          content: this.item.thumbnail,
+        },
+        {
+          name: 'instagram:title',
+          property: 'instagram:title',
+          content: 'instagram title' + this.item.judul,
+        },
+        {
+          name: 'instagram:card',
+          property: 'instagram:card',
+          content: 'article',
+        },
+        {
+          name: 'image',
+          itemprop: 'image',
+          content: this.item.thumbnail,
+        },
+        {
+          name: 'description',
+          itemprop: 'description',
+          content: this.item.deskripsi,
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: this.item.deskripsi,
+        },
+        {
+          name: 'og:description',
+          itemprop: 'og:description',
+          content: this.item.deskripsi,
+        },
+      ],
+    }
+  },
   data() {
     return {
       item: [],
@@ -428,6 +522,22 @@ export default {
         .get('galang-dana/' + this.$route.params.id)
         .then((ress) => {
           this.item = ress.data.data
+        })
+    },
+
+    async createFund() {
+      if (this.amountFund < 10000) {
+        this.$swal({ text: 'Maaf kita baru bisa transaksi minimal 10.000' })
+        return
+      }
+      let data = this.$axios
+        .post('donasi/create', {
+          fund_id: this.$route.params.id,
+          current_amout: this.amountFund,
+        })
+        .then((ress) => {
+          console.log(ress.data.data.snap_url)
+          window.location.replace(ress.data.data.snap_url)
         })
     },
   },

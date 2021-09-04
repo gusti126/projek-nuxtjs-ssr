@@ -141,7 +141,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://komfaktek.gustirizkia.my.id/api/',
+    baseURL: 'https://komfaktek.myflower.online/api/',
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
