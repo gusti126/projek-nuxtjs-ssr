@@ -35,7 +35,7 @@
           <nuxt-link to="/galang-dana" class="ml-8 hover:text-green-700 my-auto"
             >Galang Dana</nuxt-link
           >
-          <a href="gabung.html" class="ml-8 hover:text-green-700 my-auto"
+          <a href="/daftar-hmi" class="ml-8 hover:text-green-700 my-auto"
             >Gabung HMI</a
           >
           <!-- jika login = false -->

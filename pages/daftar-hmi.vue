@@ -284,7 +284,27 @@
               placeholder="Laki-laki atau Perempuan "
             />
           </div>
-          <div class="col-span-4"></div>
+          <div class="col-span-4">
+            <div class="">
+              <label for="">Rekning Tujuan</label>
+            </div>
+            <select
+              class="
+                rounded-lg
+                px-2
+                py-1
+                focus:ring-2 focus:ring-hijau-button focus:text-hijau-button
+                border border-gray-500
+                focus:border-transparent focus:outline-none
+                mt-1
+                w-full
+              "
+            >
+              <option value="">11992878 BCA GUSTI MAULANA RIZKIA</option>
+              <option value="">009899756 BRI HMI KOMFAKTEK</option>
+            </select>
+          </div>
+
           <div class="col-span-3">
             <div class="">Foto diri 3x4</div>
             <div
@@ -422,3 +442,77 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  middleware: 'auth',
+  head() {
+    return {
+      title: 'Bergabung | event | HMI Komfaktek Melangkah Maju ',
+      meta: [
+        {
+          name: 'description',
+          content: 'bergabung bersama HMI Komfaktek 2021',
+        },
+        {
+          name: 'title',
+          content: 'Daftar | Basic Training | HMI Komfaktek Melangkah Maju ',
+        },
+        {
+          itemprop: 'title',
+          name: 'title',
+          content: 'Daftar | Basic Training | HMI Komfaktek Melangkah Maju ',
+        },
+        {
+          itemprop: 'image',
+          name: 'image',
+          content: 'https://gustirizkia.my.id/logo-komfaktek14.jpg',
+        },
+        {
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Daftar | Basic Training | HMI Komfaktek Melangkah Maju ',
+        },
+        {
+          property: 'og:image',
+          itemprop: 'image',
+          content: 'https://gustirizkia.my.id/logo-komfaktek14.jpg',
+        },
+        {
+          name: 'og:site_name',
+          property: 'og:site_name',
+          content: ' HMI Komfaktek Melangkah Maju',
+        },
+        {
+          hid: 'og:type',
+          name: 'og:type',
+          property: 'og:type',
+          content: 'website',
+        },
+
+        {
+          name: 'instagram:card',
+          property: 'instagram:card',
+          content: 'article',
+        },
+        {
+          name: 'description',
+          itemprop: 'description',
+          content: 'Daftar | Basic Training | HMI Komfaktek Melangkah Maju ',
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: 'Bergabung | event | HMI Komfaktek Melangkah Maju ',
+        },
+        {
+          name: 'og:description',
+          itemprop: 'og:description',
+          content: 'Bergabung | event | HMI Komfaktek Melangkah Maju ',
+        },
+      ],
+    }
+  },
+}
+</script>
