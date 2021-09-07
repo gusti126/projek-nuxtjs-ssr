@@ -77,16 +77,6 @@
                 </div>
                 <div class="flex my-auto">
                   <a
-                    href="reward.html"
-                    class="
-                      ml-8
-                      hover:text-green-700
-                      my-auto
-                      text-gray-700 text-sm
-                    "
-                    >Reward</a
-                  >
-                  <a
                     href="tulisan.html"
                     class="
                       ml-8
@@ -96,25 +86,25 @@
                     "
                     >Tulisan</a
                   >
-                  <a
-                    href="galang.html"
+                  <nuxt-link
+                    to="/galang-dana"
                     class="
                       ml-8
                       hover:text-green-700
                       my-auto
                       text-gray-700 text-sm
                     "
-                    >Galang Dana</a
+                    >Galang Dana</nuxt-link
                   >
-                  <a
-                    href="gabung.html"
+                  <nuxt-link
+                    to="/daftar-hmi"
                     class="
                       ml-8
                       hover:text-green-700
                       my-auto
                       text-gray-700 text-sm
                     "
-                    >Gabung HMI</a
+                    >Gabung HMI</nuxt-link
                   >
                 </div>
               </nav>

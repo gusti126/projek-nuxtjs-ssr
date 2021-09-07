@@ -1,6 +1,7 @@
 <template>
   <div class="pb-32 min-h-screen">
     <navmobile />
+
     <div class="bg-hero-galang-dana bg-center bg-cover">
       <navbar />
       <div class="grid grid-flow-row grid-cols-12 md:px-10 px-4 pb-20 md:pb-10">
@@ -134,9 +135,12 @@
 
     <div class="md:px-10 px-4">
       <div class="border border-gray-300 bg-white rounded-lg p-4">
-        <div class="font-semibold">Form Pendaftaran</div>
-        <div class="grid grid-flow-row grid-cols-1 md:grid-cols-12 gap-4 mt-6">
-          <div class="col-span-4">
+        <div class="font-semibold text-center">Form Pendaftaran</div>
+        <div
+          class="grid grid-flow-row grid-cols-3 md:grid-cols-12 gap-4 mt-6"
+          v-if="!isDafatrLk"
+        >
+          <div class="col-span-12 md:col-span-4">
             <div class="">
               <label for="">Nama Lengkap</label>
             </div>
@@ -152,9 +156,10 @@
                 mt-1
                 w-full
               "
+              v-model="dataDaftarLk.nama"
             />
           </div>
-          <div class="col-span-4">
+          <div class="col-span-12 md:col-span-4">
             <div class="">
               <label for="">Email Aktif</label>
             </div>
@@ -170,9 +175,10 @@
                 mt-1
                 w-full
               "
+              v-model="dataDaftarLk.email"
             />
           </div>
-          <div class="col-span-4">
+          <div class="col-span-12 md:col-span-4">
             <div class="">
               <label for="">Nomor WhatsApp</label>
             </div>
@@ -188,9 +194,10 @@
                 mt-1
                 w-full
               "
+              v-model="dataDaftarLk.wa"
             />
           </div>
-          <div class="col-span-4">
+          <div class="col-span-12 md:col-span-4">
             <div class="">
               <label for="">Nomor Induk Mahasiswa</label>
             </div>
@@ -206,9 +213,10 @@
                 mt-1
                 w-full
               "
+              v-model="dataDaftarLk.nim"
             />
           </div>
-          <div class="col-span-4">
+          <div class="col-span-12 md:col-span-4">
             <div class="">
               <label for="">Program Studi </label>
             </div>
@@ -224,10 +232,31 @@
                 mt-1
                 w-full
               "
+              v-model="dataDaftarLk.prodi"
               placeholder="Contoh : Teknik Informatika"
             />
           </div>
-          <div class="col-span-4">
+          <div class="col-span-12 md:col-span-4">
+            <div class="">
+              <label for="">Semester Sekarang </label>
+            </div>
+            <input
+              type="number"
+              class="
+                rounded-lg
+                px-2
+                py-1
+                focus:ring-2 focus:ring-hijau-button focus:text-hijau-button
+                border border-gray-500
+                focus:border-transparent focus:outline-none
+                mt-1
+                w-full
+              "
+              v-model="dataDaftarLk.semester"
+              placeholder="Contoh : semester 4"
+            />
+          </div>
+          <div class="col-span-12 md:col-span-4">
             <div class="">
               <label for="">ALamat </label>
             </div>
@@ -243,10 +272,11 @@
                 mt-1
                 w-full
               "
+              v-model="dataDaftarLk.alamat"
               placeholder="Contoh : Teknik Informatika"
             />
           </div>
-          <div class="col-span-4">
+          <div class="col-span-12 md:col-span-4">
             <div class="">
               <label for="">TGL Lahir </label>
             </div>
@@ -262,10 +292,11 @@
                 mt-1
                 w-full
               "
+              v-model="dataDaftarLk.tgl_lhr"
               placeholder="Contoh : Teknik Informatika"
             />
           </div>
-          <div class="col-span-4">
+          <div class="col-span-12 md:col-span-4">
             <div class="">
               <label for="">Jenis Kelamin</label>
             </div>
@@ -281,10 +312,11 @@
                 mt-1
                 w-full
               "
+              v-model="dataDaftarLk.jenis_kl"
               placeholder="Laki-laki atau Perempuan "
             />
           </div>
-          <div class="col-span-4">
+          <div class="col-span-12 md:col-span-4">
             <div class="">
               <label for="">Rekning Tujuan</label>
             </div>
@@ -299,142 +331,296 @@
                 mt-1
                 w-full
               "
+              v-model="dataDaftarLk.rekeni_tujuan"
             >
-              <option value="">11992878 BCA GUSTI MAULANA RIZKIA</option>
-              <option value="">009899756 BRI HMI KOMFAKTEK</option>
+              <option :value="rek.id" v-for="rek in rekening" :key="rek.id">
+                {{ rek.nomor_bank }} {{ rek.nama_bank }} {{ rek.atas_nama }}
+              </option>
             </select>
           </div>
 
-          <div class="col-span-3">
-            <div class="">Foto diri 3x4</div>
-            <div
-              class="
-                bg-gray-300
-                w-full
-                h-24
-                rounded-lg
-                text-center
-                flex flex-wrap
-                content-center
-              "
-            >
-              <div
-                class="
-                  font-semibold
-                  text-center
-                  border border-hijau-button
-                  rounded-lg
-                  inline-block
-                  px-2
-                  py-1
-                  text-sm
-                  mx-auto
-                  cursor-pointer
-                  bg-hijau-button
-                  text-white
-                "
-              >
-                Pilih Image
+          <!-- refs image -->
+          <div class="hidden">
+            <input
+              type="file"
+              class="bg-gray-700 cursor-pointer hidden"
+              ref="fotodiri"
+              @change="onFotodiri"
+              accept="image/*"
+            />
+            <input
+              type="file"
+              class="bg-gray-700 cursor-pointer hidden"
+              ref="fotoktm"
+              @change="onFotoKtm"
+              accept="image/*"
+            />
+            <input
+              type="file"
+              class="bg-gray-700 cursor-pointer hidden"
+              ref="fotoByr"
+              @change="onFotoByr"
+              accept="image/*"
+            />
+            <input
+              type="file"
+              class="bg-gray-700 cursor-pointer hidden"
+              ref="fotoKtp"
+              @change="onFotoKtp"
+              accept="image/*"
+            />
+          </div>
+          <!-- endrefs image -->
+          <!-- image input -->
+          <div class="col-span-12">
+            <div class="grid grid-flow-row grid-cols-12 gap-4">
+              <div class="col-span-12 md:col-span-3">
+                <div class="">Foto diri 3x4</div>
+                <div
+                  class="
+                    bg-gray-300
+                    w-full
+                    h-24
+                    rounded-lg
+                    text-center
+                    flex flex-wrap
+                    content-center
+                  "
+                  v-if="!selectedFiles.fotoDiri"
+                >
+                  <div
+                    class="
+                      font-semibold
+                      text-center
+                      border border-hijau-button
+                      rounded-lg
+                      inline-block
+                      px-2
+                      py-1
+                      text-sm
+                      mx-auto
+                      cursor-pointer
+                      bg-hijau-button
+                      text-white
+                    "
+                    @click="$refs.fotodiri.click()"
+                  >
+                    Pilih Image
+                  </div>
+                </div>
+                <div
+                  class="
+                    bg-gray-300
+                    w-full
+                    h-24
+                    rounded-lg
+                    text-center
+                    flex flex-wrap
+                    content-center
+                  "
+                  v-else
+                >
+                  <img
+                    :src="dataDaftarLk.foto_diri"
+                    alt=""
+                    class="object-contain mx-auto h-24"
+                  />
+                </div>
+              </div>
+              <div class="col-span-12 md:col-span-3">
+                <div class="">Foto KTM</div>
+                <div
+                  class="
+                    bg-gray-300
+                    w-full
+                    h-24
+                    rounded-lg
+                    text-center
+                    flex flex-wrap
+                    content-center
+                  "
+                  v-if="!selectedFiles.fotoKtm"
+                >
+                  <div
+                    class="
+                      font-semibold
+                      text-center
+                      border border-hijau-button
+                      rounded-lg
+                      inline-block
+                      px-2
+                      py-1
+                      text-sm
+                      mx-auto
+                      cursor-pointer
+                      bg-hijau-button
+                      text-white
+                    "
+                    @click="$refs.fotoktm.click()"
+                  >
+                    Pilih Image
+                  </div>
+                </div>
+                <div
+                  class="
+                    bg-gray-300
+                    w-full
+                    h-24
+                    rounded-lg
+                    text-center
+                    flex flex-wrap
+                    content-center
+                  "
+                  v-else
+                >
+                  <img
+                    :src="dataDaftarLk.foto_ktm"
+                    alt=""
+                    class="object-contain mx-auto h-24"
+                  />
+                </div>
+              </div>
+              <div class="col-span-12 md:col-span-3">
+                <div class="">Foto KTP</div>
+                <div
+                  class="
+                    bg-gray-300
+                    w-full
+                    h-24
+                    rounded-lg
+                    text-center
+                    flex flex-wrap
+                    content-center
+                  "
+                  v-if="!selectedFiles.fotoKtp"
+                >
+                  <div
+                    class="
+                      font-semibold
+                      text-center
+                      border border-hijau-button
+                      rounded-lg
+                      inline-block
+                      px-2
+                      py-1
+                      text-sm
+                      mx-auto
+                      cursor-pointer
+                      bg-hijau-button
+                      text-white
+                    "
+                    @click="$refs.fotoKtp.click()"
+                  >
+                    Pilih Image
+                  </div>
+                </div>
+                <div
+                  class="
+                    bg-gray-300
+                    w-full
+                    h-24
+                    rounded-lg
+                    text-center
+                    flex flex-wrap
+                    content-center
+                  "
+                  v-else
+                >
+                  <img
+                    :src="dataDaftarLk.foto_ktp"
+                    alt=""
+                    class="object-contain mx-auto h-24"
+                  />
+                </div>
+              </div>
+              <div class="col-span-12 md:col-span-3">
+                <div class="">Foto Bukti Pembayaran 20.000</div>
+                <div
+                  class="
+                    bg-gray-300
+                    w-full
+                    h-24
+                    rounded-lg
+                    text-center
+                    flex flex-wrap
+                    content-center
+                  "
+                  v-if="!selectedFiles.fotoBayar"
+                >
+                  <div
+                    class="
+                      font-semibold
+                      text-center
+                      border border-hijau-button
+                      rounded-lg
+                      inline-block
+                      px-2
+                      py-1
+                      text-sm
+                      mx-auto
+                      cursor-pointer
+                      bg-hijau-button
+                      text-white
+                    "
+                    @click="$refs.fotoByr.click()"
+                  >
+                    Pilih Image
+                  </div>
+                </div>
+                <div
+                  class="
+                    bg-gray-300
+                    w-full
+                    h-24
+                    rounded-lg
+                    text-center
+                    flex flex-wrap
+                    content-center
+                  "
+                  v-else
+                >
+                  <img
+                    :src="dataDaftarLk.foto_bukti_by"
+                    alt=""
+                    class="object-contain mx-auto h-24"
+                  />
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-span-3">
-            <div class="">Foto KTM</div>
+          <!-- end image input -->
+          <!-- button submit -->
+          <div class="col-span-12">
             <div
               class="
-                bg-gray-300
-                w-full
-                h-24
+                bg-hijau-button
+                py-2
+                px-2
                 rounded-lg
-                text-center
-                flex flex-wrap
-                content-center
+                text-white text-center
+                font-medium
+                cursor-pointer
+                hover:bg-hijau-header
               "
+              @click="daftarLksatu"
             >
-              <div
-                class="
-                  font-semibold
-                  text-center
-                  border border-hijau-button
-                  rounded-lg
-                  inline-block
-                  px-2
-                  py-1
-                  text-sm
-                  mx-auto
-                  cursor-pointer
-                  bg-hijau-button
-                  text-white
-                "
-              >
-                Pilih Image
-              </div>
+              Daftar LK 1 HMI Komfaktek
             </div>
           </div>
-          <div class="col-span-3">
-            <div class="">Foto KTP</div>
-            <div
-              class="
-                bg-gray-300
-                w-full
-                h-24
-                rounded-lg
-                text-center
-                flex flex-wrap
-                content-center
-              "
-            >
-              <div
-                class="
-                  font-semibold
-                  text-center
-                  border border-hijau-button
-                  rounded-lg
-                  inline-block
-                  px-2
-                  py-1
-                  text-sm
-                  mx-auto
-                  cursor-pointer
-                  bg-hijau-button
-                  text-white
-                "
-              >
-                Pilih Image
-              </div>
-            </div>
+        </div>
+        <div class="mt-4" v-else>
+          <div>
+            <img
+              src="~assets/image/logo-komfaktek.png"
+              alt=""
+              class="mx-auto w-32"
+            />
           </div>
-          <div class="col-span-3">
-            <div class="">Foto Bukti Pembayaran 20.000</div>
-            <div
-              class="
-                bg-gray-300
-                w-full
-                h-24
-                rounded-lg
-                text-center
-                flex flex-wrap
-                content-center
-              "
-            >
-              <div
-                class="
-                  font-semibold
-                  text-center
-                  border border-hijau-button
-                  rounded-lg
-                  inline-block
-                  px-2
-                  py-1
-                  text-sm
-                  mx-auto
-                  cursor-pointer
-                  bg-hijau-button
-                  text-white
-                "
-              >
-                Pilih Image
-              </div>
+          <div class="text-center mt-4">
+            <div class="text-lg font-semibold text-green-800">
+              Terimkasih sudah mendaftar basic training (lk-1) <br />
+              HMI Komfaktek Cabang Ciputat <br />
+              Periode 2021-2022
             </div>
           </div>
         </div>
@@ -513,6 +699,135 @@ export default {
         },
       ],
     }
+  },
+  data() {
+    return {
+      rekening: [],
+      isDafatrLk: false,
+      dataDaftarLk: {
+        nama: this.$store.state.auth.user.name,
+        email: this.$store.state.auth.user.email,
+        wa: 0,
+        nim: 0,
+        prodi: '',
+        semester: 0,
+        alamat: '',
+        tgl_lhr: null,
+        jenis_kl: '',
+        foto_diri: undefined,
+        foto_ktm: undefined,
+        foto_ktp: undefined,
+        foto_bukti_by: undefined,
+        rekeni_tujuan: 1,
+      },
+      selectedFiles: {
+        fotoDiri: undefined,
+        fotoKtm: undefined,
+        fotoKtp: undefined,
+        fotoBayar: undefined,
+      },
+    }
+  },
+
+  mounted() {
+    this.$store.commit('setLoading', true)
+    this.getRekening()
+    this.cekDaftarLk()
+    console.log(this.dataDaftarLk)
+  },
+
+  methods: {
+    async getRekening() {
+      this.$store.commit('setLoading', true)
+      let response = await this.$axios.get('rekening').then((ress) => {
+        this.rekening = ress.data.data
+        console.log(this.rekening)
+      })
+    },
+    async cekDaftarLk() {
+      let response = await this.$axios
+        .get('cek-daftar-lk')
+        .then((ress) => {
+          this.isDafatrLk = true
+          this.$swal({
+            icon: 'info',
+            title: 'Sudah pernah mengisi form pendaftaran',
+            text: 'Anda sudah mengirim form pendaftaran selanjutnya akan di followup oleh tim HMI komfaktek. Tenang saja proses ini tidak lama',
+          })
+        })
+        .catch((e) => {
+          console.log(e.response.data.message)
+          this.isDafatrLk = false
+        })
+      this.$store.commit('setLoading', false)
+    },
+    onFotodiri(e) {
+      if (e.target.files.length !== 0) {
+        const file = e.target.files[0]
+        this.dataDaftarLk.foto_diri = URL.createObjectURL(file)
+        console.log(this.dataDaftarLk.foto_diri)
+        this.selectedFiles.fotoDiri = this.$refs.fotodiri.files
+        console.log('foto diri')
+      }
+    },
+    onFotoKtm(e) {
+      if (e.target.files.length !== 0) {
+        const file = e.target.files[0]
+        this.dataDaftarLk.foto_ktm = URL.createObjectURL(file)
+        this.selectedFiles.fotoKtm = this.$refs.fotoktm.files
+        console.log('foto Ktm')
+      }
+    },
+    onFotoKtp(e) {
+      if (e.target.files.length !== 0) {
+        const file = e.target.files[0]
+        this.dataDaftarLk.foto_ktp = URL.createObjectURL(file)
+        this.selectedFiles.fotoKtp = this.$refs.fotoKtp.files
+        console.log('foto ktp')
+      }
+    },
+    onFotoByr(e) {
+      if (e.target.files.length !== 0) {
+        const file = e.target.files[0]
+        this.dataDaftarLk.foto_bukti_by = URL.createObjectURL(file)
+        this.selectedFiles.fotoBayar = this.$refs.fotoByr.files
+        console.log('foto bayar')
+      }
+    },
+    async daftarLksatu() {
+      this.$store.commit('setLoading', true)
+      let formData = new FormData()
+      formData.append('foto_diri', this.selectedFiles.fotoDiri.item(0))
+      formData.append('foto_ktm', this.selectedFiles.fotoKtm.item(0))
+      formData.append('foto_ktp', this.selectedFiles.fotoKtp.item(0))
+      formData.append('foto_bukti_byr', this.selectedFiles.fotoBayar.item(0))
+      formData.append('alamat', this.dataDaftarLk.alamat)
+      formData.append('nama', this.dataDaftarLk.nama)
+      formData.append('prodi', this.dataDaftarLk.prodi)
+      formData.append('nomor_mhs', this.dataDaftarLk.nim)
+      formData.append('smstr', this.dataDaftarLk.semester)
+      formData.append('nomor_wa', this.dataDaftarLk.wa)
+      formData.append('email', this.dataDaftarLk.email)
+      formData.append('rekening_id', this.dataDaftarLk.rekeni_tujuan)
+      formData.append('jk', this.dataDaftarLk.jenis_kl)
+      formData.append('tgl_lahir', this.dataDaftarLk.tgl_lhr)
+
+      let submitData = await this.$axios
+        .post('daftarlk/create', formData)
+        .then((ress) => {
+          console.log(ress)
+          this.isDafatrLk = true
+          this.$store.commit('setLoading', false)
+          this.$swal({
+            icon: 'success',
+            title: 'Berhasil Kirim Form',
+            text: 'Form pendaftaran berhasil di kirim selanjutnya akan di periksa oleh TIM HMI Komfaktek update selanjutnya akan di kirim via email dan nomor whatsApp',
+          })
+        })
+        .catch((e) => {
+          console.log(e.response.data.message)
+        })
+    },
   },
 }
 </script>

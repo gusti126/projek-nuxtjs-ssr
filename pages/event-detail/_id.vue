@@ -230,53 +230,7 @@
           </div>
         </div>
       </div>
-      <div class="md:px-10 px2 mt-4">
-        <div class="rounded-lg bg-white p-6">
-          <div class="font-semibold text-lg text-gray-700">Event Lainnya</div>
 
-          <div class="grid grid-flow-row grid-cols-12 gap-6 mt-6">
-            <div
-              class="col-span-12 md:col-span-3 p-4 rounded-lg border"
-              v-for="p of 4"
-            >
-              <nuxt-link to="">
-                <div>
-                  <img
-                    src="https://lorempixel.com/200/200/technics/"
-                    alt=""
-                    class="rounded-lg w-full object-cover h-40"
-                  />
-                </div>
-                <div class="text-lg font-semibold text-gray-700 mt-2">
-                  Java Programming Master Class For Software
-                </div>
-                <div class="mt-4 flex justify-between">
-                  <div class="flex">
-                    <div>
-                      <img
-                        src="~/assets/image/icon/emojione-v1-alarm-clock.svg"
-                        alt=""
-                        class="w-4 mr-2"
-                      />
-                    </div>
-                    <div class="my-auto text-gray-700 text-xs">09/08/21</div>
-                  </div>
-                  <div class="flex">
-                    <div>
-                      <img
-                        src="~/assets/image/icon/whh_student.svg"
-                        alt=""
-                        class="w-4 mr-2"
-                      />
-                    </div>
-                    <div class="my-auto text-gray-700 text-xs">100 Peserta</div>
-                  </div>
-                </div>
-              </nuxt-link>
-            </div>
-          </div>
-        </div>
-      </div>
       <Cfooter />
     </div>
   </div>

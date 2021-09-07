@@ -26,9 +26,6 @@
           </nuxt-link>
         </div>
         <div class="flex my-auto">
-          <a href="reward.html" class="ml-8 hover:text-green-700 my-auto"
-            >Reward</a
-          >
           <a href="tulisan.html" class="ml-8 hover:text-green-700 my-auto"
             >Tulisan</a
           >
