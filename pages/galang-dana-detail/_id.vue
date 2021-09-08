@@ -423,25 +423,33 @@
 export default {
   head() {
     return {
-      title: this.item.judul + ' | HMI Komfaktek Melangkah Peduli Umat',
+      title:
+        this.DetailGalangDanaAsyn.data.data.judul +
+        ' | HMI Komfaktek Peduli Umat',
       meta: [
         {
           name: 'description',
-          content: this.item.deskripsi,
+          content: this.DetailGalangDanaAsyn.data.data.deskripsi,
         },
         {
           name: 'title',
-          content: this.item.judul + ' | HMI Komfaktek Melangkah Peduli Umat',
+          content:
+            this.DetailGalangDanaAsyn.data.data.judul +
+            ' | HMI Komfaktek Melangkah Peduli Umat',
         },
         {
           itemprop: 'title',
           name: 'title',
-          content: this.item.judul + ' | HMI Komfaktek Melangkah Peduli Umat',
+          content:
+            this.DetailGalangDanaAsyn.data.data.judul +
+            ' | HMI Komfaktek Melangkah Peduli Umat',
         },
         {
           name: 'og:title',
           property: 'og:title',
-          content: this.item.judul + ' | HMI Komfaktek Melangkah Peduli Umat',
+          content:
+            this.DetailGalangDanaAsyn.data.data.judul +
+            ' | HMI Komfaktek Melangkah Peduli Umat',
         },
         {
           name: 'og:site_name',
@@ -465,17 +473,18 @@ export default {
         {
           name: 'og:image',
           property: 'og:image',
-          content: this.item.thumbnail,
+          content: this.DetailGalangDanaAsyn.data.data.thumbnail,
         },
         {
           name: 'image',
           property: 'image',
-          content: this.item.thumbnail,
+          content: this.DetailGalangDanaAsyn.data.data.thumbnail,
         },
         {
           name: 'instagram:title',
           property: 'instagram:title',
-          content: 'instagram title' + this.item.judul,
+          content:
+            'instagram title' + this.DetailGalangDanaAsyn.data.data.judul,
         },
         {
           name: 'instagram:card',
@@ -485,23 +494,23 @@ export default {
         {
           name: 'image',
           itemprop: 'image',
-          content: this.item.thumbnail,
+          content: this.DetailGalangDanaAsyn.data.data.thumbnail,
         },
         {
           name: 'description',
           itemprop: 'description',
-          content: this.item.deskripsi,
+          content: this.DetailGalangDanaAsyn.data.data.deskripsi,
         },
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: this.item.deskripsi,
+          content: this.DetailGalangDanaAsyn.data.data.deskripsi,
         },
         {
           name: 'og:description',
           itemprop: 'og:description',
-          content: this.item.deskripsi,
+          content: this.DetailGalangDanaAsyn.data.data.deskripsi,
         },
       ],
     }
@@ -540,6 +549,11 @@ export default {
           window.location.replace(ress.data.data.snap_url)
         })
     },
+  },
+  async asyncData({ $axios, params }) {
+    let DetailGalangDanaAsyn = await $axios.get('galang-dana/' + params.id)
+    console.log(DetailGalangDanaAsyn)
+    return { DetailGalangDanaAsyn }
   },
 
   watch: {
