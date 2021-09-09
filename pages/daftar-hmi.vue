@@ -634,11 +634,11 @@ export default {
   middleware: 'auth',
   head() {
     return {
-      title: 'Bergabung | event | HMI Komfaktek Melangkah Maju ',
+      title: 'Basic Training LK 1 HMI Komfaktek Melangkah Maju ',
       meta: [
         {
           name: 'description',
-          content: 'bergabung bersama HMI Komfaktek 2021',
+          content: 'Basic Training LK 1 bersama HMI Komfaktek 2021',
         },
         {
           name: 'title',
