@@ -535,7 +535,7 @@
                 </div>
               </div>
               <div class="col-span-12 md:col-span-3">
-                <div class="">Foto Bukti Pembayaran 20.000</div>
+                <div class="">Foto Bukti Pembayaran 30.000</div>
                 <div
                   class="
                     bg-gray-300
