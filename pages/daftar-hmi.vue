@@ -53,6 +53,7 @@
                   py-2
                   px-8
                   mr-6
+                  hidden
                 "
                 >Get Started</nuxt-link
               >
@@ -273,7 +274,7 @@
                 w-full
               "
               v-model="dataDaftarLk.alamat"
-              placeholder="Contoh : Teknik Informatika"
+              placeholder="Contoh : Contoh Tangerang Selatan"
             />
           </div>
           <div class="col-span-12 md:col-span-4">
@@ -480,7 +481,7 @@
                   />
                 </div>
               </div>
-              <div class="col-span-12 md:col-span-3">
+              <div class="col-span-12 md:col-span-3 hidden">
                 <div class="">Foto KTP</div>
                 <div
                   class="
@@ -816,6 +817,27 @@ export default {
       }
     },
     async daftarLksatu() {
+      if (
+        !this.dataDaftarLk.nama ||
+        !this.dataDaftarLk.email ||
+        this.dataDaftarLk.wa.length < 1 ||
+        this.dataDaftarLk.nim.length < 1 ||
+        !this.dataDaftarLk.prodi ||
+        this.dataDaftarLk.semester === 0 ||
+        !this.dataDaftarLk.tgl_lhr ||
+        !this.dataDaftarLk.jenis_kl ||
+        !this.dataDaftarLk.foto_diri ||
+        !this.dataDaftarLk.foto_ktm ||
+        !this.dataDaftarLk.foto_bukti_by
+      ) {
+        this.$swal({
+          icon: 'error',
+          title: 'Gagal Daftar Basic Training',
+          text: 'Ada Form yang kosong silahkan isi terlebih dahulu',
+        })
+        console.log(this.dataDaftarLk)
+        return
+      }
       this.$store.commit('setLoading', true)
       let formData = new FormData()
       formData.append('foto_diri', this.selectedFiles.fotoDiri.item(0))
