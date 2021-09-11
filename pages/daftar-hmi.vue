@@ -618,9 +618,25 @@
           </div>
           <div class="text-center mt-4">
             <div class="text-lg font-semibold text-green-800">
-              Terimkasih sudah mendaftar basic training (lk-1) <br />
+              Terimakasih sudah mendaftar basic training (lk-1) <br />
               HMI Komfaktek Cabang Ciputat <br />
-              Periode 2021-2022
+              Periode 2021-2022 <br />
+              <div
+                class="
+                  bg-hijau-button
+                  text-white
+                  px-3
+                  py-2
+                  rounded-full
+                  inline-block
+                  text-base
+                  font-normal
+                  cursor-pointer
+                "
+                @click="tautanGrupWa"
+              >
+                Gabung Grup WhatsApp Calon Anggota
+              </div>
             </div>
           </div>
         </div>
@@ -737,6 +753,11 @@ export default {
   },
 
   methods: {
+    tautanGrupWa() {
+      window.location.replace(
+        'https://chat.whatsapp.com/EgNbVLH3rN5E5ml9n1HP4G'
+      )
+    },
     async getRekening() {
       this.$store.commit('setLoading', true)
       let response = await this.$axios.get('rekening').then((ress) => {
