@@ -843,7 +843,7 @@ export default {
       let formData = new FormData()
       formData.append('foto_diri', this.selectedFiles.fotoDiri.item(0))
       formData.append('foto_ktm', this.selectedFiles.fotoKtm.item(0))
-      formData.append('foto_ktp', this.selectedFiles.fotoKtp.item(0))
+      // formData.append('foto_ktp', this.selectedFiles.fotoKtp.item(0))
       formData.append('foto_bukti_byr', this.selectedFiles.fotoBayar.item(0))
       formData.append('alamat', this.dataDaftarLk.alamat)
       formData.append('nama', this.dataDaftarLk.nama)
