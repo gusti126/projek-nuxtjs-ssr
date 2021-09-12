@@ -92,10 +92,8 @@
           </div>
           <div class="text-center mt-4">
             <div class="font-semibold text-gray-700">
-              Admin {{ this.$store.state.auth.user.name }}
-            </div>
-            <div class="mt-1 text-sm text-gray-600">
-              {{ this.$store.state.auth.user.user_detail.profesi }}
+              Admin <br />
+              {{ this.$store.state.auth.user.name }}
             </div>
           </div>
           <div class="mt-8 text-center">
@@ -103,6 +101,7 @@
               to="/admin/peserta"
               class="
                 flex
+                text-center
                 rounded-lg
                 px-3
                 py-2
@@ -219,7 +218,7 @@
 
           <!-- konten -->
           <div class="md:px-4 rounded">
-            <div class="bg-white w-full p-4 md:pb-0 pb-28"><Nuxt /></div>
+            <div class="bg-white w-full p-4 md:pb-4 pb-28"><Nuxt /></div>
           </div>
           <!-- endkonten -->
         </div>
@@ -227,6 +226,16 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    async logoutUser() {
+      await this.$auth.logout()
+    },
+  },
+}
+</script>
 
 <style scoped>
 .loader-dots div {

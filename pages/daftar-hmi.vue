@@ -622,9 +622,17 @@
               Terimakasih sudah mendaftar basic training (lk-1) <br />
               HMI Komfaktek Cabang Ciputat <br />
               Periode 2021-2022 <br />
-              <span class="font-semibold text-yellow-500"
+              <span
+                class="font-semibold text-yellow-500"
+                v-if="statusDaftar === 'pending'"
                 >Data anda sedang dalam proses Verfikasi</span
-              ><br />
+              >
+              <span
+                class="font-semibold text-green-800"
+                v-if="statusDaftar === 'sukses'"
+                >Anda Berhasil Mendaftar Basic Training HMI Komfaktek</span
+              >
+              <br />
               <div
                 class="
                   bg-hijau-button
@@ -636,6 +644,7 @@
                   text-base
                   font-normal
                   cursor-pointer
+                  mt-2
                 "
                 @click="tautanGrupWa"
               >
@@ -724,6 +733,7 @@ export default {
     return {
       rekening: [],
       isDafatrLk: false,
+      statusDaftar: 'pending',
       dataDaftarLk: {
         nama: this.$store.state.auth.user.name,
         email: this.$store.state.auth.user.email,
@@ -771,6 +781,17 @@ export default {
       let response = await this.$axios
         .get('cek-daftar-lk')
         .then((ress) => {
+          console.log(ress)
+          if (ress.data.data.status === 'sukses') {
+            this.$swal({
+              icon: 'success',
+              title: 'Pendaftaran berhasil',
+              text: 'Berkas kamu di terima oleh HMI Komfaktek',
+            })
+            this.isDafatrLk = true
+            this.statusDaftar = 'sukses'
+            return
+          }
           this.isDafatrLk = true
           this.$swal({
             icon: 'info',
