@@ -314,7 +314,6 @@ export default {
           password: this.user.password,
         })
         .then((ress) => {
-          console.log(ress)
           this.userLogin()
         })
         .catch((e) => {

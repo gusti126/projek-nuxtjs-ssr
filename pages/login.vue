@@ -223,7 +223,7 @@ export default {
       let response = await this.$auth
         .loginWith('local', { data: this.login })
         .then((ress) => {
-          console.log(ress)
+          // console.log(ress)
         })
         .catch((e) => {
           this.errors = e.response.data.message

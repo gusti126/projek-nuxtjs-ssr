@@ -622,6 +622,9 @@
               Terimakasih sudah mendaftar basic training (lk-1) <br />
               HMI Komfaktek Cabang Ciputat <br />
               Periode 2021-2022 <br />
+              <span class="font-semibold text-yellow-500"
+                >Data anda sedang dalam proses Verfikasi</span
+              ><br />
               <div
                 class="
                   bg-hijau-button
@@ -750,7 +753,6 @@ export default {
     this.$store.commit('setLoading', true)
     this.getRekening()
     this.cekDaftarLk()
-    console.log(this.dataDaftarLk)
   },
 
   methods: {
@@ -763,7 +765,6 @@ export default {
       this.$store.commit('setLoading', true)
       let response = await this.$axios.get('rekening').then((ress) => {
         this.rekening = ress.data.data
-        console.log(this.rekening)
       })
     },
     async cekDaftarLk() {
@@ -787,7 +788,7 @@ export default {
       if (e.target.files.length !== 0) {
         const file = e.target.files[0]
         this.dataDaftarLk.foto_diri = URL.createObjectURL(file)
-        console.log(this.dataDaftarLk.foto_diri)
+        // console.log(this.dataDaftarLk.foto_diri)
         this.selectedFiles.fotoDiri = this.$refs.fotodiri.files
         console.log('foto diri')
       }
@@ -835,7 +836,7 @@ export default {
           title: 'Gagal Daftar Basic Training',
           text: 'Ada Form yang kosong silahkan isi terlebih dahulu',
         })
-        console.log(this.dataDaftarLk)
+        // console.log(this.dataDaftarLk)
         return
       }
       this.$store.commit('setLoading', true)
@@ -858,7 +859,6 @@ export default {
       let submitData = await this.$axios
         .post('daftarlk/create', formData)
         .then((ress) => {
-          console.log(ress)
           this.isDafatrLk = true
           this.$store.commit('setLoading', false)
           this.$swal({

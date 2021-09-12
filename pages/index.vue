@@ -92,10 +92,12 @@
     <div class="bg-white">
       <!-- mobile livst program -->
       <div class="grid grid-flow-row grid-cols-4 gap-4 md:hidden">
-        <div class="p-2 text-center">
-          <img src="~/assets/image/training.svg" alt="" class="w-9 mx-auto" />
-          <div class="text-xs mt-1">LK 1</div>
-        </div>
+        <nuxt-link to="/daftar-hmi">
+          <div class="p-2 text-center">
+            <img src="~/assets/image/training.svg" alt="" class="w-9 mx-auto" />
+            <div class="text-xs mt-1">LK 1</div>
+          </div>
+        </nuxt-link>
         <div class="p-2 text-center">
           <img src="~/assets/image/founding.png" alt="" class="w-9 mx-auto" />
           <div class="text-xs mt-1">Peduli</div>
