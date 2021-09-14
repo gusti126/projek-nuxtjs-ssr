@@ -74,10 +74,13 @@
           Peduli
         </div>
       </nuxt-link>
-      <a href="tulisan.html" class="">
+      <nuxt-link to="/tulisan" class="">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-8 w-8 text-gray-500 mx-auto"
+          :class="
+            this.$route.path === '/tulisan' ? 'text-green-700' : 'text-gray-500'
+          "
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -92,12 +95,12 @@
         <div
           class="font-semibold text-sm"
           :class="
-            this.$route.path === '/artikel' ? 'text-green-700' : 'text-gray-500'
+            this.$route.path === '/tulisan' ? 'text-green-700' : 'text-gray-500'
           "
         >
-          Artikel
+          Tulisan
         </div>
-      </a>
+      </nuxt-link>
       <nuxt-link to="/mobile/menu" class="">
         <svg
           xmlns="http://www.w3.org/2000/svg"

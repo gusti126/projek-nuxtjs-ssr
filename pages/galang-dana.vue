@@ -2,7 +2,6 @@
   <div>
     <navmobile />
 
-    <navmobile />
     <div
       class="
         bg-center bg-cover
@@ -97,7 +96,7 @@
         rounded-b-2xl
       "
     >
-      <form action="">
+      <div>
         <div class="relative text-gray-600">
           <input
             type="search"
@@ -116,6 +115,8 @@
               focus:border-transparent
               w-full
             "
+            autocomplete="off"
+            v-model="cari"
           />
           <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
             <svg
@@ -138,7 +139,7 @@
             </svg>
           </button>
         </div>
-      </form>
+      </div>
     </section>
     <!-- endheader mobile -->
 
@@ -166,6 +167,53 @@
       </div>
     </section>
     <!-- end step illustator -->
+
+    <!-- loading search -->
+    <div class="text-center">
+      <span class="" v-if="loadingSearch">
+        <button
+          type="button"
+          class="
+            inline-flex
+            items-center
+            px-4
+            py-2
+            border border-transparent
+            text-base
+            leading-6
+            font-semibold
+            text-green-800
+            active:bg-indigo-700
+            transition
+            ease-in-out
+            duration-150
+          "
+        >
+          <svg
+            class="animate-spin -ml-1 mr-3 h-8 w-8 text-green-700"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              class="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              stroke-width="4"
+            />
+            <path
+              class="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+            />
+          </svg>
+          Memuat pencarian ...
+        </button>
+      </span>
+    </div>
+    <!-- endloading search -->
 
     <section class="mt-8">
       <div class="container px-2 md:px-10 my-4 mb-20">
@@ -373,6 +421,8 @@ export default {
   data() {
     return {
       items: [],
+      cari: '',
+      loadingSearch: false,
     }
   },
 
@@ -384,8 +434,27 @@ export default {
     async getGalangDana() {
       let data = await this.$axios.get('galang-dana').then((ress) => {
         this.items = ress.data.data
-        console.log(this.items)
       })
+    },
+    async cariGalangDana() {
+      let data = await this.$axios
+        .post('galang-dana/cari', {
+          keyword: this.cari,
+        })
+        .then((ress) => {
+          this.items = ress.data.data
+          this.loadingSearch = false
+        })
+    },
+  },
+  watch: {
+    cari() {
+      if (this.cari.length > 3) {
+        this.loadingSearch = true
+        this.cariGalangDana()
+      } else {
+        this.getGalangDana()
+      }
     },
   },
 }

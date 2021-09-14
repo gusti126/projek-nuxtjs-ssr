@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 grid-flow-row mt-4">
-      <div class="shadow-md rounded bg-white">
+      <div class="shadow-md rounded bg-white pb-2">
         <div class="bg-gradient-to-r from-blue-500 rounded-t p-4 to-green-500">
           <div class="text-lg text-white font-medium flex">
             Jumlah Pendaftar LK 1
@@ -10,6 +10,7 @@
         <div class="p-4">
           {{ countPesertaLk }}
         </div>
+        <nuxt-link to="/admin/peserta" class="p-4">Lihat Detail</nuxt-link>
       </div>
       <div class="shadow-md rounded bg-white">
         <div
