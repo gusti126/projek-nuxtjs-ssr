@@ -12,6 +12,12 @@ export default {
           'Himpunan Mahasiswa Islam Komisariat Fakultas Teknik Cabang Ciputat',
       },
       {
+        hid: 'http-equiv',
+        "http-equiv": 'Content-Security-Policy',
+        content:
+          'upgrade-insecure-requests"',
+      },
+      {
         hid: 'og:description',
         name: 'og:description',
         property: 'og:description',
@@ -141,7 +147,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://komfaktek.myflower.online/api/',
+    baseURL: 'http://47.254.200.223:81/api/',
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
