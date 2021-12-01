@@ -12,17 +12,6 @@ export default {
           'Himpunan Mahasiswa Islam Komisariat Fakultas Teknik Cabang Ciputat',
       },
       {
-        hid: 'http-equiv',
-        "http-equiv": 'Content-Security-Policy',
-        content:
-          'upgrade-insecure-requests"',
-      },
-      {
-        "http-equiv": 'Content-Security-Policy',
-        content:
-          'upgrade-insecure-requests"',
-      },
-      {
         hid: 'og:description',
         name: 'og:description',
         property: 'og:description',
