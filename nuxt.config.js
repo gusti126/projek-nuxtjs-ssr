@@ -18,6 +18,11 @@ export default {
           'upgrade-insecure-requests"',
       },
       {
+        "http-equiv": 'Content-Security-Policy',
+        content:
+          'upgrade-insecure-requests"',
+      },
+      {
         hid: 'og:description',
         name: 'og:description',
         property: 'og:description',
@@ -147,7 +152,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'http://47.254.200.223:81/api/',
+    baseURL: 'https://new-api-komfaktek.gustirizkia.my.id/api/',
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
