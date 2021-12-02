@@ -1,6 +1,7 @@
 <template>
   <div>
-    <navmobile />
+    <div>
+      <navmobile />
     <section class="hidden md:block">
       <div
         class="
@@ -385,6 +386,8 @@
     </div>
 
     <cfooter />
+    </div>
+    
   </div>
 </template>
 
