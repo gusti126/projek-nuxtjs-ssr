@@ -228,7 +228,6 @@ export default {
       let data = await this.$axios
         .post('profile/update', formData)
         .then((ress) => {
-          console.log(ress)
           this.$swal({
             toast: true,
             position: 'top-end',

@@ -151,7 +151,7 @@
         Donasi saya
       </nuxt-link>
       <nuxt-link
-        to=""
+        to="/dashboard/tulisan"
         class="
           flex
           bg-white
@@ -159,8 +159,12 @@
           px-3
           py-2
           mb-4
-          text-gray-400
           hover:bg-green-400 hover:text-white
+        "
+        :class="
+          this.$route.path == '/dashboard/tulisan'
+            ? 'bg-hijau-button text-white'
+            : 'text-gray-400 bg-white'
         "
       >
         <svg

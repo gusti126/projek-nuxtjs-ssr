@@ -141,7 +141,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://backendkomfaktek.gustirizkia.my.id/api/',
+    baseURL: 'https://api-komfaktek.herokuapp.com/api/',
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -158,6 +158,11 @@ export default {
         compilerOptions: {
           // This option is highly recommended
           preserveWhitespace: false,
+        },
+      },
+      less: {
+        lessOptions: {
+          javascriptEnabled: true,
         },
       },
     },

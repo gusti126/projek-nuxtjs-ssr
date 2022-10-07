@@ -76,16 +76,17 @@
                   </nuxt-link>
                 </div>
                 <div class="flex my-auto">
-                  <a
-                    href="tulisan.html"
+                  <nuxt-link
+                    to="/dashboard/tulisan"
                     class="
                       ml-8
                       hover:text-green-700
                       my-auto
                       text-gray-700 text-sm
                     "
-                    >Tulisan</a
                   >
+                    Tulisan
+                  </nuxt-link>
                   <nuxt-link
                     to="/galang-dana"
                     class="
