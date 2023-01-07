@@ -347,7 +347,7 @@
             <nuxt-link :to="'/event-detail/' + item.id">
               <div>
                 <img
-                  :src="item.image"
+                  :src="'https://komfaktek.m-andreansaefudin.com/' + item.image"
                   alt=""
                   class="rounded-lg w-full object-cover h-40"
                 />
