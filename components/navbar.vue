@@ -58,7 +58,7 @@
             ><div class="mr-4 my-auto">
               {{ this.$store.state.auth.user.name }}
             </div>
-            <div v-if="this.$store.state.auth.user.user_detail.image">
+            <div v-if="this.$store.state.auth.user.user_detail">
               <img
                 :src="this.$store.state.auth.user.user_detail.image"
                 alt=""

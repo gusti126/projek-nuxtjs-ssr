@@ -74,27 +74,18 @@
         <div class="col-span-12 md:col-span-8">
           <div class="bg-white rounded-lg p-6">
             <div>
-              <img :src="items.image" alt="" class="w-full rounded-lg" />
+              <img
+                :src="'https://komfaktek.m-andreansaefudin.com/' + items.image"
+                alt=""
+                class="w-full rounded-lg"
+              />
             </div>
             <div class="text-2xl font-semibold text-gray-700 mt-4">
               {{ items.nama }}
             </div>
-            <div
-              class="mt-2 text-gray-700 leading-7 text-sm md:text-base"
-              v-if="readMore"
-            >
-              {{ items.deskripsi }}
-            </div>
-            <div
-              class="mt-2 text-gray-700 leading-7 text-sm md:text-base"
-              v-else
-            >
-              {{ shortDesk }}
-              <span
-                class="font-semibold text-hijau-button cursor-pointer"
-                @click="lihatSelengkapnya"
-                >. . . Lebih selengkapnya</span
-              >
+            <div class="mt-2 text-gray-700 leading-7 text-sm md:text-base">
+              <div v-html="items.deskripsi" />
+              <!-- {{ items.deskripsi }} -->
             </div>
           </div>
           <div class="mt-4 bg-white rounded-lg p-6">
@@ -102,7 +93,9 @@
             <div class="flex text-center justify-around">
               <div v-for="pemateri in items.pemateri" :key="pemateri.id">
                 <img
-                  :src="pemateri.image"
+                  :src="
+                    'https://komfaktek.m-andreansaefudin.com/' + pemateri.image
+                  "
                   alt=""
                   class="
                     rounded-full
@@ -358,7 +351,8 @@ export default {
         .then((ress) => {
           this.items = ress.data.data
           // console.log(this.items.moderator[0].user.user_detail.image)
-          this.moderator.image = this.items.moderator[0].user.user_detail.image
+          this.moderator.image =
+            this.items.moderator[0].user.user_detail.image ?? ''
           this.moderator.title =
             this.items.moderator[0].user.user_detail.profesi
           this.moderator.nama = this.items.moderator[0].user.name
