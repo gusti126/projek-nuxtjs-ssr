@@ -183,6 +183,11 @@ export default {
             timer: 8000,
           })
           // location.reload()
+          this.selectedFiles = null
+          this.kategori_id = 0
+          this.contentHolder = null
+          this.judul = ''
+          this.$router.push('/dashboard/tulisan')
         })
         .catch((err) => {
           this.$swal({

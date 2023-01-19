@@ -39,7 +39,8 @@
             class="animate-pulse bg-gray-300 h-5 mt-4 md:w-96 rounded-full"
           ></div>
           <div
-            v-for="p of 4"
+            v-for="(p, index) of 4"
+            :key="index"
             class="animate-pulse bg-gray-300 h-5 mt-4 w-full rounded-full"
           ></div>
         </div>
