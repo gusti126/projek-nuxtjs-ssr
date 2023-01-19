@@ -55,7 +55,7 @@
             "
           >
             <!-- header card -->
-            <div class="flex">
+            <div class="flex justify-items-center">
               <div class="">
                 <img
                   :src="tulisan.user.profile_photo_url"
@@ -65,19 +65,10 @@
               </div>
               <div class="ml-4 w-full">
                 <div class="text-lg font-medium">{{ tulisan.user.name }}</div>
-                <div class="flex w-full">
-                  <div
-                    class="
-                      w-full
-                      d-none
-                      text-right text-gray-600
-                      font-normal
-                      text-sm
-                    "
-                  >
-                    {{ tulisan.user.email }}
-                  </div>
+                <div class="w-full text-left text-gray-600 font-normal text-sm">
+                  {{ tulisan.user.email }}
                 </div>
+                <div class="flex w-full"></div>
               </div>
             </div>
             <div class="mt-5">
