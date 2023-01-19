@@ -22,121 +22,25 @@
       </div>
       <!-- endheader background and nav -->
       <div class="container md:-mt-40 md:px-10 mt-2 z-40">
-        <div class="owl-carousel owl-theme">
-          <div class="item">
-            <img
-              src="~/assets/image/carousel-tulisan1.svg"
-              alt="tulisan"
-              class=""
-            />
-          </div>
+        <div class="item">
+          <img
+            src="~/assets/image/carousel-tulisan1.svg"
+            alt="tulisan"
+            class="w-full"
+          />
         </div>
       </div>
     </section>
     <!-- endhedaer -->
 
     <!-- filter -->
-    <section class="container md:px-10 px-2">
-      <div class="flex mt-4">
-        <div class="my-auto md:my-0">
-          <input
-            type="text"
-            class="
-              md:h-8
-              border border-gray-400
-              rounded-xl
-              focus:outline-none
-              focus:ring-2
-              focus:ring-hijau-button
-              focus:border-transparent
-              focus:text-green-800
-              px-4
-              md:w-96
-              w-64
-            "
-          />
-        </div>
-        <div class="hidden">
-          <select
-            name="kategori"
-            id=""
-            class="
-              h-8
-              border border-gray-400
-              rounded-xl
-              focus:outline-none
-              focus:ring-2
-              focus:ring-hijau-button
-              focus:text-green-800
-              text-gray-800
-              focus:border-transparent
-              md:w-32
-              w-10
-              px-4
-              ml-4
-            "
-          >
-            <option value="">All</option>
-            <option value="">Puisi</option>
-            <option value="">Sejarah</option>
-            <option value="">Politik</option>
-          </select>
-        </div>
-        <div class="hidden md:block">
-          <select
-            name="kategori"
-            id=""
-            class="
-              h-8
-              border border-gray-400
-              rounded-xl
-              focus:outline-none
-              focus:ring-2
-              focus:ring-hijau-button
-              focus:text-green-800
-              text-gray-800
-              focus:border-transparent
-              w-32
-              px-4
-              ml-4
-            "
-          >
-            <option value="">All</option>
-            <option value="">Puisi</option>
-            <option value="">Sejarah</option>
-            <option value="">Politik</option>
-          </select>
-        </div>
-        <div class="my-auto">
-          <a
-            href=""
-            class="
-              md:rounded-full
-              rounded-full
-              bg-hijau-button
-              md:shadow-hijau-hmi2
-              hover:bg-hijau-header
-              md:px-10
-              px-4
-              py-1
-              md:text-lg md:ml-6
-              ml-2
-              text-white
-              w-full
-              block
-              text-center
-            "
-            >Cari</a
-          >
-        </div>
-      </div>
-    </section>
+
     <!-- endfilter -->
     <!-- konten -->
     <section class="container md:px-10 px-2 mt-6">
       <div class="grid md:grid-cols-3 grid-cols-1 grid-flow-row gap-2 md:gap-4">
-        <a
-          href="detailartikel.html"
+        <nuxt-link
+          :to="'/baca-tulisan/' + tulisan.id"
           v-for="tulisan in tulisans"
           :key="tulisan.id"
         >
@@ -171,7 +75,7 @@
                       text-sm
                     "
                   >
-                    Pamulang
+                    {{ tulisan.user.email }}
                   </div>
                 </div>
               </div>
@@ -179,9 +83,7 @@
             <div class="mt-5">
               <div>
                 <img
-                  :src="
-                    'https://komfaktek.m-andreansaefudin.com/' + tulisan.image
-                  "
+                  :src="tulisan.image"
                   alt=""
                   class="rounded-2xl w-full h-48 object-cover"
                 />
@@ -189,27 +91,48 @@
               <div class="mt-2 text-lg font-semibold">
                 {{ tulisan.judul }}
               </div>
-              <div class="flex mt-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 text-red-600"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                <div class="ml-1 text-gray-700">100</div>
-                <div class="ml-1 text-gray-700 w-full text-right">
-                  22/09/2020
+              <div class="flex mt-2 justify-between">
+                <div class="flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 text-red-600"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <div class="ml-1 text-gray-700">
+                    {{ tulisan.kategori.nama }}
+                  </div>
+                </div>
+                <div class="flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"
+                    />
+                  </svg>
+
+                  <div class="ml-1 text-gray-700 w-full text-right">
+                    {{ tulisan.created_at }}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </a>
+        </nuxt-link>
       </div>
     </section>
     <!-- endkonten -->

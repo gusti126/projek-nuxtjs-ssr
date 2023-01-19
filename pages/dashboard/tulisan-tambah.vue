@@ -182,11 +182,17 @@ export default {
             showConfirmButton: false,
             timer: 8000,
           })
+          // location.reload()
         })
         .catch((err) => {
+          this.$swal({
+            icon: 'Error',
+            title: 'Gagal Upload artikel, telah terjadi kesalahan',
+            timer: 8000,
+          })
           console.log('ada error', err)
         })
-      location.reload()
+
       this.$store.commit('setLoading', false)
     },
 

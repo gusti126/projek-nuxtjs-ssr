@@ -55,6 +55,7 @@
     </div>
     <footer
       class="
+        mt-10
         py-4
         border-t-2
         bg-gradient-to-r
