@@ -2,7 +2,7 @@
   <div class="">
     <navmobile />
     <!-- header -->
-    <section class="">
+    <section class="pb-12">
       <!-- header background and nav -->
       <div
         class="
@@ -26,30 +26,86 @@
           <div class="md:col-span-9 col-span-12">
             <div class="item bg-white rounded-xl">
               <img
-                :src="item.image"
+                :src="response.data.image"
                 alt="tulisan"
-                class="rounded-t-xl w-full"
+                class="md:rounded-t-xl w-full"
               />
-              <div class="mt-4 p-4">
-                <div class="text-3xl text-gray-800 font-medium">
-                  {{ item.judul }}
+              <div class="md:mt-4 mt-1 p-4">
+                <div
+                  class="md:text-3xl text-xl text-gray-800 font-semibold mb-4"
+                >
+                  {{ response.data.judul }}
                 </div>
-                <div class="" v-html="item.teks"></div>
+                <div
+                  class="
+                    mb-3
+                    flex
+                    justify-items-center
+                    align-middle
+                    items-center
+                  "
+                >
+                  <img
+                    :src="
+                      response.data.user.image_profile
+                        ? response.data.user.image_profile
+                        : response.data.user.profile_photo_url
+                    "
+                    alt=""
+                    class="rounded-full w-14 h-12 object-cover object-center"
+                  />
+                  <div class="ml-4">
+                    <div class="text-lg font-medium">
+                      {{ response.data.user.name }}
+                    </div>
+                    <div class="flex w-full">
+                      <div
+                        class="
+                          w-full
+                          d-none
+                          text-left text-gray-600
+                          font-normal
+                          text-sm
+                        "
+                      >
+                        {{ response.data.user.email }}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex ml-4">
+                    <nuxt-link to="#" class="">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-10 h-10 bg-green-700 rounded-lg text-white p-2"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"
+                        />
+                      </svg>
+                    </nuxt-link>
+                  </div>
+                </div>
+                <div class="" v-html="response.data.teks"></div>
               </div>
             </div>
           </div>
-          <div class="md:col-span-3 col-span-12">
+          <div class="md:col-span-3 col-span-12 md:px-0 px-4 md:mb-0 mb-12">
             <div class="">
               <nuxt-link
                 :to="'/baca-tulisan/' + tulisan.id"
-                v-for="tulisan in tulisans"
+                v-for="tulisan in response.lainnya"
                 :key="tulisan.id"
               >
                 <div
                   class="
                     bg-white
                     p-5
-                    shadow-lg
                     rounded-3xl
                     hover:border-gray-500
                     border
@@ -60,7 +116,11 @@
                   <div class="flex">
                     <div class="">
                       <img
-                        :src="tulisan.user.profile_photo_url"
+                        :src="
+                          tulisan.user.image_profile
+                            ? tulisan.user.image_profile
+                            : tulisan.user.profile_photo_url
+                        "
                         alt=""
                         class="
                           rounded-full
@@ -79,7 +139,7 @@
                           class="
                             w-full
                             d-none
-                            text-right text-gray-600
+                            text-left text-gray-600
                             font-normal
                             text-sm
                           "
@@ -166,56 +226,45 @@ export default {
     }
   },
   mounted() {
-    this.fetchData()
-    this.fetchDataListArtikel()
+    // this.fetchData()
   },
-  methods: {
-    async fetchData() {
-      let response = await this.$axios
-        .get('tulisan/' + this.$route.params.id)
-        .then((res) => {
-          console.log('res.data.data', res.data.data)
-          this.item = res.data.data
-          console.log('this.item', this.item)
-        })
-    },
 
-    async fetchDataListArtikel() {
-      let resposne = await this.$axios.get('tulisan').then((res) => {
-        this.tulisans = res.data.data
-      })
-    },
+  async asyncData({ $axios, params }) {
+    let response = await $axios.$get('tulisan/' + params.id)
+
+    return { response }
   },
+  methods: {},
 
   head() {
     return {
-      title: this.item.judul + '| HMI KOMFAKTEK Cabang Ciputat',
+      title: this.response.data.judul + '| HMI KOMFAKTEK Cabang Ciputat',
       meta: [
         {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: 'HMI KOMFAKTEK | ' + this.item.judul,
+          content: 'HMI KOMFAKTEK | ' + this.response.data.judul,
         },
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: 'Baca Tulisan ' + this.item.judul,
+          content: 'Baca Tulisan ' + this.response.data.judul,
         },
         {
           hid: 'og:image',
           name: 'og:image',
           property: 'og:image',
           itemprop: 'image',
-          content: this.item.image,
+          content: this.response.data.image,
         },
         {
           hid: 'image',
           name: 'image',
           itemprop: 'image',
           property: 'image',
-          content: this.item.image,
+          content: this.response.data.image,
         },
         {
           hid: 'og:type',
@@ -249,7 +298,7 @@ export default {
         {
           itemprop: 'image',
           name: 'image',
-          content: this.item.image,
+          content: this.response.data.image,
         },
       ],
     }

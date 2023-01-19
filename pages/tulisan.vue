@@ -36,29 +36,62 @@
     <!-- filter -->
 
     <!-- endfilter -->
+
+    <!-- skeleton -->
+    <div class="md:px-10 px-4 mt-6" v-if="isLoading">
+      <div class="grid grid-flow-row grid-cols-12 gap-4">
+        <div
+          class="col-span-12 md:col-span-4 gap-4"
+          v-for="(p, index) of 6"
+          :key="index"
+        >
+          <div class="p-4 rounded-3xl animate-pulse bg-gray-100 border">
+            <div
+              class="
+                animate-pulse
+                bg-gray-500
+                rounded-3xl
+                h-44
+                w-full
+                flex flex-col
+                justify-center
+                items-center
+              "
+            >
+              <div class="text-gray-800 text-3xl font-semibold">
+                Loading Sebentar
+              </div>
+            </div>
+            <div
+              class="animate-pulse bg-gray-500 rounded-3xl h-4 mt-2 w-full"
+            ></div>
+            <div
+              class="animate-pulse bg-gray-500 rounded-3xl h-4 mt-2 w-1/2"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- endskeleton -->
+
     <!-- konten -->
-    <section class="container md:px-10 px-2 mt-6">
+    <section class="container md:px-10 px-4 mt-6">
       <div class="grid md:grid-cols-3 grid-cols-1 grid-flow-row gap-2 md:gap-4">
         <nuxt-link
           :to="'/baca-tulisan/' + tulisan.id"
           v-for="tulisan in tulisans"
           :key="tulisan.id"
         >
-          <div
-            class="
-              bg-white
-              p-5
-              shadow-lg
-              rounded-3xl
-              hover:border-gray-500
-              border
-            "
-          >
+          <div class="bg-white p-5 rounded-3xl hover:border-gray-500 border">
             <!-- header card -->
             <div class="flex justify-items-center">
               <div class="">
                 <img
-                  :src="tulisan.user.profile_photo_url"
+                  :src="
+                    tulisan.user.image_profile
+                      ? tulisan.user.image_profile
+                      : tulisan.user.profile_photo_url
+                  "
                   alt=""
                   class="rounded-full w-14 h-12 object-cover object-center"
                 />
@@ -136,6 +169,7 @@ export default {
   data() {
     return {
       tulisans: [],
+      isLoading: true,
     }
   },
   mounted() {
@@ -145,6 +179,7 @@ export default {
     async fetchData() {
       let resposne = await this.$axios.get('tulisan').then((res) => {
         this.tulisans = res.data.data
+        this.isLoading = false
       })
     },
   },
