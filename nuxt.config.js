@@ -50,6 +50,14 @@ export default {
         content: 'website',
       },
       {
+        hid: 'og:site_name',
+        name: 'og:site_name',
+        itemprop: 'og:site_name',
+        property: 'og:site_name',
+        content:
+          'Himpunan Mahasiswa Islam Komisariat Fakultas Teknik Cabang Ciputat',
+      },
+      {
         hid: 'og:image:width',
         name: 'og:image:width',
         itemprop: 'og:image:width',
