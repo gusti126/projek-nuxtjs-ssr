@@ -1,5 +1,12 @@
 <template>
   <div class="">
+    <nuxt-link to="/dashboard/tulisan-tambah">
+      <div
+        class="bg-green-800 text-white px-3 py-2 rounded-lg inline-block mb-6"
+      >
+        Tambah Tulisan
+      </div>
+    </nuxt-link>
     <div class="grid grid-flow-row grid-cols-12 gap-4">
       <div class="col-span-4" v-for="tulisan in tulisans" :key="tulisan.id">
         <img
