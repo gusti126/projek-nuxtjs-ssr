@@ -23,11 +23,7 @@
       <!-- endheader background and nav -->
       <div class="md:-mt-40 md:px-10 mt-2 z-40">
         <div class="item">
-          <img
-            src="~/assets/image/carousel-tulisan1.svg"
-            alt="tulisan"
-            class="w-full"
-          />
+          <img src="~/assets/image/tulisan1.svg" alt="tulisan" class="w-full" />
         </div>
       </div>
     </section>
