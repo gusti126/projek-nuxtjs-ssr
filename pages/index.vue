@@ -16,7 +16,7 @@
           "
         >
           <navbar />
-          <div class="conatiner px-2 md:px-10 md:mt-20 md:w-6/12">
+          <div class="container px-2 md:px-10 md:mt-20 md:w-6/12">
             <div
               class="
                 md:text-5xl md:pt-10
@@ -122,7 +122,7 @@
         </div>
         <!-- endmobile livst program -->
       </div>
-      <section class="container md:px-10 px-4 md:my-10 bg-cover md:py-7 pt-2">
+      <section class="md:px-10 px-4 md:my-10 bg-cover md:py-7 pt-2">
         <div class="text-3xl text-gray-800 text-center md:block hidden">
           Program
         </div>

@@ -6,6 +6,9 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
+        name: 'google-site-verification" content="jSal0hiyatha3MThEMAfbq7QtptVZ6xFOS_hIQXBe4g',
+      },
+      {
         hid: 'description',
         name: 'description',
         content:
