@@ -21,13 +21,9 @@
         <!-- <div class="conatiner px-2 md:px-10 md:mt-20 h-32"></div> -->
       </div>
       <!-- endheader background and nav -->
-      <div class="container md:-mt-40 md:px-10 mt-2 z-40">
+      <div class="md:-mt-40 md:px-10 mt-2 z-40">
         <div class="item">
-          <img
-            src="~/assets/image/carousel-tulisan1.svg"
-            alt="tulisan"
-            class="w-full"
-          />
+          <img src="~/assets/image/tulisan1.svg" alt="tulisan" class="w-full" />
         </div>
       </div>
     </section>
@@ -75,7 +71,7 @@
     <!-- endskeleton -->
 
     <!-- konten -->
-    <section class="container md:px-10 px-4 mt-6">
+    <section class="md:px-10 px-4 mt-6">
       <div class="grid md:grid-cols-3 grid-cols-1 grid-flow-row gap-2 md:gap-4">
         <nuxt-link
           :to="'/baca-tulisan/' + tulisan.id"
