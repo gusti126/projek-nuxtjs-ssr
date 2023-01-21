@@ -21,7 +21,7 @@
         <!-- <div class="conatiner px-2 md:px-10 md:mt-20 h-32"></div> -->
       </div>
       <!-- endheader background and nav -->
-      <div class="container md:-mt-40 md:px-10 mt-2 z-40">
+      <div class="md:-mt-40 md:px-10 mt-2 z-40">
         <div class="item">
           <img
             src="~/assets/image/carousel-tulisan1.svg"
@@ -37,45 +37,8 @@
 
     <!-- endfilter -->
 
-    <!-- skeleton -->
-    <div class="md:px-10 px-4 mt-6" v-if="isLoading">
-      <div class="grid grid-flow-row grid-cols-12 gap-4">
-        <div
-          class="col-span-12 md:col-span-4 gap-4"
-          v-for="(p, index) of 6"
-          :key="index"
-        >
-          <div class="p-4 rounded-3xl animate-pulse bg-gray-100 border">
-            <div
-              class="
-                animate-pulse
-                bg-gray-500
-                rounded-3xl
-                h-44
-                w-full
-                flex flex-col
-                justify-center
-                items-center
-              "
-            >
-              <div class="text-gray-800 text-3xl font-semibold">
-                Loading Sebentar
-              </div>
-            </div>
-            <div
-              class="animate-pulse bg-gray-500 rounded-3xl h-4 mt-2 w-full"
-            ></div>
-            <div
-              class="animate-pulse bg-gray-500 rounded-3xl h-4 mt-2 w-1/2"
-            ></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- endskeleton -->
-
     <!-- konten -->
-    <section class="container md:px-10 px-4 mt-6">
+    <section class="md:px-10 px-4 mt-6">
       <div class="grid md:grid-cols-3 grid-cols-1 grid-flow-row gap-2 md:gap-4">
         <nuxt-link
           :to="'/baca-tulisan/' + tulisan.id"
@@ -160,6 +123,60 @@
       </div>
     </section>
     <!-- endkonten -->
+
+    <!-- skeleton -->
+    <div class="md:px-10 px-4 mt-6" v-if="isLoading">
+      <div class="grid grid-flow-row grid-cols-12 gap-4">
+        <div
+          class="col-span-12 md:col-span-4 gap-4"
+          v-for="(p, index) of 6"
+          :key="index"
+        >
+          <div class="p-4 rounded-3xl animate-pulse bg-gray-100 border">
+            <div
+              class="
+                animate-pulse
+                bg-gray-500
+                rounded-3xl
+                h-44
+                w-full
+                flex flex-col
+                justify-center
+                items-center
+              "
+            >
+              <div class="text-gray-800 text-3xl font-semibold">
+                Loading Sebentar
+              </div>
+            </div>
+            <div
+              class="animate-pulse bg-gray-500 rounded-3xl h-4 mt-2 w-full"
+            ></div>
+            <div
+              class="animate-pulse bg-gray-500 rounded-3xl h-4 mt-2 w-1/2"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- endskeleton -->
+    <div class="flex justify-center">
+      <div
+        class="
+          bg-hijau-button
+          px-3
+          py-2
+          rounded-full
+          mx-auto
+          text-white
+          font-medium
+          inline-block
+        "
+      >
+        Lainnya
+      </div>
+    </div>
+
     <Cfooter />
   </div>
 </template>
@@ -170,15 +187,18 @@ export default {
     return {
       tulisans: [],
       isLoading: true,
+      current_page: 1,
+      last_page: 1,
     }
   },
   mounted() {
-    this.fetchData()
+    this.fetchData(1)
   },
   methods: {
-    async fetchData() {
+    async fetchData(page) {
       let resposne = await this.$axios.get('tulisan').then((res) => {
-        this.tulisans = res.data.data
+        this.tulisans = res.data.data.data
+        this.last_page = res.data.data.last_page
         this.isLoading = false
       })
     },
