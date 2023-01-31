@@ -200,7 +200,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://komfaktek.m-andreansaefudin.com/api/',
+    baseURL: 'https://komfaktek.kuakmedia.co/api/',
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

@@ -40,8 +40,18 @@
           :to="'/baca-tulisan/' + tulisan.id"
           v-for="tulisan in tulisans"
           :key="tulisan.id"
+          class="
+            bg-white
+            h-full
+            p-5
+            rounded-3xl
+            hover:border-gray-500
+            border
+            flex flex-col
+            justify-between
+          "
         >
-          <div class="bg-white p-5 rounded-3xl hover:border-gray-500 border">
+          <div class="">
             <!-- header card -->
             <div class="flex justify-items-center">
               <div class="">
@@ -71,46 +81,49 @@
                   class="rounded-2xl w-full h-48 object-cover"
                 />
               </div>
-              <div class="mt-2 text-lg font-semibold">
-                {{ tulisan.judul }}
-              </div>
-              <div class="flex mt-2 justify-between">
-                <div class="flex">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6 text-red-600"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                  <div class="ml-1 text-gray-700">
-                    {{ tulisan.kategori.nama }}
-                  </div>
-                </div>
-                <div class="flex">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-6 h-6"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"
-                    />
-                  </svg>
+            </div>
+          </div>
 
-                  <div class="ml-1 text-gray-700 w-full text-right">
-                    {{ tulisan.created_at }}
-                  </div>
+          <div class="flex flex-col justify-between h-full">
+            <div class="mt-2 text-lg font-semibold">
+              {{ tulisan.judul }}
+            </div>
+            <div class="flex mt-2 justify-between">
+              <div class="flex">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-red-600"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <div class="ml-1 text-gray-700">
+                  {{ tulisan.kategori.nama }}
+                </div>
+              </div>
+              <div class="flex">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"
+                  />
+                </svg>
+
+                <div class="ml-1 text-gray-700 w-full text-right">
+                  {{ tulisan.created_at }}
                 </div>
               </div>
             </div>
@@ -156,18 +169,23 @@
       </div>
     </div>
     <!-- endskeleton -->
-    <div class="flex justify-center">
+
+    <div class="flex justify-content-center" v-show="last_page > current_page">
       <div
         class="
           bg-hijau-button
-          px-3
+          px-8
+          hover:bg-green-800
           py-2
           rounded-full
           mx-auto
           text-white
           font-medium
           inline-block
+          mt-8
+          cursor-pointer
         "
+        @click="fetchData(1)"
       >
         Lainnya
       </div>
@@ -183,7 +201,7 @@ export default {
     return {
       tulisans: [],
       isLoading: true,
-      current_page: 1,
+      current_page: 0,
       last_page: 1,
     }
   },
@@ -192,11 +210,25 @@ export default {
   },
   methods: {
     async fetchData(page) {
-      let resposne = await this.$axios.get('tulisan').then((res) => {
-        this.tulisans = res.data.data.data
-        this.last_page = res.data.data.last_page
-        this.isLoading = false
-      })
+      this.isLoading = true
+      this.current_page += 1
+      let arrayData = []
+
+      let resposne = await this.$axios
+        .get('tulisan' + '?page=' + this.current_page)
+        .then((res) => {
+          // this.tulisans.push()
+          if (this.tulisans.length > 0) {
+            let newArray = res.data.data.data
+            newArray.forEach((element) => {
+              this.tulisans.push(element)
+            })
+          } else {
+            this.tulisans = res.data.data.data
+          }
+          this.last_page = res.data.data.last_page
+          this.isLoading = false
+        })
     },
   },
 }
