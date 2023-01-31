@@ -2,7 +2,7 @@
   <div>
     <div
       class="
-        container
+        w-full
         justify-between
         fixed
         bottom-0

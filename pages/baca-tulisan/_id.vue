@@ -21,7 +21,7 @@
         <!-- <div class="conatiner px-2 md:px-10 md:mt-20 h-32"></div> -->
       </div>
       <!-- endheader background and nav -->
-      <div class="container md:-mt-40 md:px-20 mt-2 z-40">
+      <div class="md:-mt-40 md:px-20 mt-2 z-40">
         <div class="grid grid-flow-row grid-cols-12 gap-6">
           <div class="md:col-span-9 col-span-12">
             <div class="item bg-white rounded-xl">
@@ -32,13 +32,13 @@
               />
               <div class="md:mt-4 mt-1 p-4">
                 <div
-                  class="md:text-3xl text-xl text-gray-800 font-semibold mb-4"
+                  class="md:text-4xl text-xl text-gray-800 font-semibold mb-4"
                 >
                   {{ response.data.judul }}
                 </div>
                 <div
                   class="
-                    mb-3
+                    mb-5
                     flex
                     justify-items-center
                     align-middle
@@ -91,6 +91,7 @@
                     </nuxt-link>
                   </div>
                 </div>
+                <hr class="mb-4" />
                 <div class="" v-html="response.data.teks"></div>
               </div>
             </div>
