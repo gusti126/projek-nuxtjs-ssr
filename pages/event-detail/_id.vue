@@ -76,7 +76,9 @@
           <div class="bg-white rounded-lg p-6">
             <div>
               <img
-                :src="'https://komfaktek.m-andreansaefudin.com/' + items.image"
+                :src="
+                  'https://komfaktek.nusacitateknologi.my.id/' + items.image
+                "
                 alt=""
                 class="w-full rounded-lg"
               />
@@ -95,7 +97,8 @@
               <div v-for="pemateri in items.pemateri" :key="pemateri.id">
                 <img
                   :src="
-                    'https://komfaktek.m-andreansaefudin.com/' + pemateri.image
+                    'https://komfaktek.nusacitateknologi.my.id/' +
+                    pemateri.image
                   "
                   alt=""
                   class="
@@ -150,7 +153,7 @@
               <hr />
               <div class="my-6 flex">
                 <img
-                  src="https://images.unsplash.com/photo-1627691541764-85b6e9003bec?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDc4fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
+                  :src="moderator.image"
                   alt=""
                   class="rounded-full object-cover w-14 h-14 mr-4"
                 />
@@ -353,7 +356,7 @@ export default {
           this.items = ress.data.data
           // console.log(this.items.moderator[0].user.user_detail.image)
           this.moderator.image =
-            this.items.moderator[0].user.user_detail.image ?? ''
+            this.items.moderator[0].user.image_profile ?? ''
           this.moderator.title =
             this.items.moderator[0].user.user_detail.profesi
           this.moderator.nama = this.items.moderator[0].user.name

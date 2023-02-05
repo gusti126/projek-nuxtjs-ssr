@@ -239,6 +239,7 @@ export default {
         })
         .catch((e) => {
           this.$swal({
+            icon: 'info',
             text: 'masih ada kolom yang kosong, di isi dulu',
           })
         })

@@ -231,7 +231,8 @@ export default {
         {
           itemprop: 'image',
           name: 'image',
-          content: 'https://gustirizkia.my.id/logo-komfaktek14.jpg',
+          content:
+            'https://hmi-komfaktek.vercel.app/_nuxt/img/logo-komfaktek1.822fb18.png',
         },
         {
           name: 'og:title',
@@ -240,7 +241,8 @@ export default {
         },
         {
           property: 'og:image',
-          content: 'https://gustirizkia.my.id/logo-komfaktek14.jpg',
+          content:
+            'https://hmi-komfaktek.vercel.app/_nuxt/img/logo-komfaktek1.822fb18.png',
         },
         {
           name: 'og:site_name',

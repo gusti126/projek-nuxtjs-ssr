@@ -122,7 +122,7 @@
         </div>
         <!-- endmobile livst program -->
       </div>
-      <section class="md:px-10 px-4 md:my-10 bg-cover md:py-7 pt-2">
+      <section class="md:px-20 px-4 md:my-10 bg-cover md:py-7 pt-2">
         <div class="text-3xl text-gray-800 text-center md:block hidden">
           Program
         </div>
@@ -336,7 +336,7 @@
         <!-- endbg-icon -->
       </div>
 
-      <div class="container md:px-10 px-4 md:my-10 py-10 mt-6">
+      <div class="container md:px-20 px-4 md:my-10 py-10 mt-6">
         <div class="text-2xl text-gray-700 font-semibold">Event Terbaru</div>
         <div class="grid grid-flow-row grid-cols-12 gap-6 mt-6">
           <div
@@ -347,7 +347,9 @@
             <nuxt-link :to="'/event-detail/' + item.id">
               <div>
                 <img
-                  :src="'https://komfaktek.m-andreansaefudin.com/' + item.image"
+                  :src="
+                    'https://komfaktek.nusacitateknologi.my.id/' + item.image
+                  "
                   alt=""
                   class="rounded-lg w-full object-cover h-40"
                 />

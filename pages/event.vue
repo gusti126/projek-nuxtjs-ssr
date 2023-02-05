@@ -434,14 +434,16 @@ export default {
           name: 'og:image',
           property: 'og:image',
           itemprop: 'image',
-          content: 'https://gustirizkia.my.id/logo-komfaktek14.jpg',
+          content:
+            'https://hmi-komfaktek.vercel.app/_nuxt/img/logo-komfaktek1.822fb18.png',
         },
         {
           hid: 'image',
           name: 'image',
           itemprop: 'image',
           property: 'image',
-          content: 'https://gustirizkia.my.id/logo-komfaktek14.jpg',
+          content:
+            'https://hmi-komfaktek.vercel.app/_nuxt/img/logo-komfaktek1.822fb18.png',
         },
         {
           hid: 'og:type',
@@ -475,7 +477,8 @@ export default {
         {
           itemprop: 'image',
           name: 'image',
-          content: 'https://gustirizkia.my.id/logo-komfaktek14.jpg',
+          content:
+            'https://hmi-komfaktek.vercel.app/_nuxt/img/logo-komfaktek1.822fb18.png',
         },
       ],
     }

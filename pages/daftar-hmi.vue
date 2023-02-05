@@ -4,7 +4,7 @@
 
     <div class="bg-hero-galang-dana bg-center bg-cover">
       <navbar />
-      <div class="grid grid-flow-row grid-cols-12 md:px-10 px-4 pb-20 md:pb-10">
+      <div class="grid grid-flow-row grid-cols-12 md:px-20 px-4 pb-20 md:pb-10">
         <div class="col-span-12 mt-8 md:col-span-6 md:hidden">
           <img src="~/assets/presiden-jokowi.png" alt="" class="" />
         </div>
@@ -79,7 +79,7 @@
       </div>
     </div>
 
-    <div class="md:px-10 px-4 my-8">
+    <div class="md:px-20 px-4 my-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 grid-flow-row mt-4">
         <div class="shadow-md rounded bg-white">
           <div
@@ -134,7 +134,7 @@
       </div>
     </div>
 
-    <div class="md:px-10 px-4">
+    <div class="md:px-20 px-4">
       <div class="border border-gray-300 bg-white rounded-lg p-4">
         <div class="font-semibold text-center">Form Pendaftaran</div>
         <div
@@ -681,7 +681,8 @@ export default {
         {
           itemprop: 'image',
           name: 'image',
-          content: 'https://gustirizkia.my.id/logo-komfaktek14.jpg',
+          content:
+            'https://hmi-komfaktek.vercel.app/_nuxt/img/logo-komfaktek1.822fb18.png',
         },
         {
           name: 'og:title',
@@ -691,7 +692,8 @@ export default {
         {
           property: 'og:image',
           itemprop: 'image',
-          content: 'https://gustirizkia.my.id/logo-komfaktek14.jpg',
+          content:
+            'https://hmi-komfaktek.vercel.app/_nuxt/img/logo-komfaktek1.822fb18.png',
         },
         {
           name: 'og:site_name',
@@ -767,9 +769,7 @@ export default {
 
   methods: {
     tautanGrupWa() {
-      window.location.replace(
-        'https://chat.whatsapp.com/EgNbVLH3rN5E5ml9n1HP4G'
-      )
+      window.open('https://chat.whatsapp.com/IskxJBjegxv6vJu3MdCSUW', '_blank')
     },
     async getRekening() {
       this.$store.commit('setLoading', true)
