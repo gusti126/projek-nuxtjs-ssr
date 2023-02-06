@@ -91,7 +91,7 @@
           </div>
           <div class="p-4">
             Persiapan berkas : kartu tanda mahasiswa, foto 3x4 formal,
-            pembayaran registrasi Rp.30.000
+            pembayaran registrasi Rp.35.000
           </div>
         </div>
         <div class="shadow-md rounded bg-white">
@@ -158,6 +158,50 @@
                 w-full
               "
               v-model="dataDaftarLk.nama"
+            />
+          </div>
+
+          <div class="col-span-12 md:col-span-4">
+            <div class="">
+              <label for="">Jenis Kelamin</label>
+            </div>
+
+            <select
+              class="
+                rounded-lg
+                px-2
+                py-1
+                focus:ring-2 focus:ring-hijau-button focus:text-hijau-button
+                border border-gray-500
+                focus:border-transparent focus:outline-none
+                mt-1
+                w-full
+              "
+              v-model="dataDaftarLk.jenis_kl"
+            >
+              <option value="Laki-laki">Laki-laki</option>
+              <option value="Perempuan">Perempuan</option>
+            </select>
+          </div>
+
+          <div class="col-span-12 md:col-span-4">
+            <div class="">
+              <label for="">Tanggal Lahir </label>
+            </div>
+            <input
+              type="date"
+              class="
+                rounded-lg
+                px-2
+                py-1
+                focus:ring-2 focus:ring-hijau-button focus:text-hijau-button
+                border border-gray-500
+                focus:border-transparent focus:outline-none
+                mt-1
+                w-full
+              "
+              v-model="dataDaftarLk.tgl_lhr"
+              placeholder="Contoh : Teknik Informatika"
             />
           </div>
           <div class="col-span-12 md:col-span-4">
@@ -254,7 +298,27 @@
                 w-full
               "
               v-model="dataDaftarLk.semester"
-              placeholder="Contoh : semester 4"
+              placeholder="4"
+            />
+          </div>
+          <div class="col-span-12 md:col-span-4">
+            <div class="">
+              <label for="">Daerah Asal </label>
+            </div>
+            <input
+              type="text"
+              class="
+                rounded-lg
+                px-2
+                py-1
+                focus:ring-2 focus:ring-hijau-button focus:text-hijau-button
+                border border-gray-500
+                focus:border-transparent focus:outline-none
+                mt-1
+                w-full
+              "
+              v-model="dataDaftarLk.daerah_asal"
+              placeholder="daerah asal . . . "
             />
           </div>
           <div class="col-span-12 md:col-span-4">
@@ -274,15 +338,15 @@
                 w-full
               "
               v-model="dataDaftarLk.alamat"
-              placeholder="Contoh : Contoh Tangerang Selatan"
+              placeholder="Alamat lengkap"
             />
           </div>
           <div class="col-span-12 md:col-span-4">
             <div class="">
-              <label for="">TGL Lahir </label>
+              <label for="">Pengalaman Organisasi </label>
             </div>
-            <input
-              type="date"
+            <textarea
+              v-model="dataDaftarLk.pengalaman_organisasi"
               class="
                 rounded-lg
                 px-2
@@ -293,13 +357,12 @@
                 mt-1
                 w-full
               "
-              v-model="dataDaftarLk.tgl_lhr"
-              placeholder="Contoh : Teknik Informatika"
-            />
+              placeholder="Pengalaman . . . "
+            ></textarea>
           </div>
           <div class="col-span-12 md:col-span-4">
             <div class="">
-              <label for="">Jenis Kelamin</label>
+              <label for="">Moto Hidup </label>
             </div>
             <input
               type="text"
@@ -313,10 +376,31 @@
                 mt-1
                 w-full
               "
-              v-model="dataDaftarLk.jenis_kl"
-              placeholder="Laki-laki atau Perempuan "
+              v-model="dataDaftarLk.moto_hidup"
+              placeholder="Moto hidup . . . "
             />
           </div>
+          <div class="col-span-12 md:col-span-4">
+            <div class="">
+              <label for="">Alasan Mengikuti LK 1 </label>
+            </div>
+            <input
+              type="text"
+              class="
+                rounded-lg
+                px-2
+                py-1
+                focus:ring-2 focus:ring-hijau-button focus:text-hijau-button
+                border border-gray-500
+                focus:border-transparent focus:outline-none
+                mt-1
+                w-full
+              "
+              v-model="dataDaftarLk.alasan"
+              placeholder="Alasana . . . "
+            />
+          </div>
+
           <div class="col-span-12 md:col-span-4">
             <div class="">
               <label for="">Rekning Tujuan</label>
@@ -535,7 +619,7 @@
                 </div>
               </div>
               <div class="col-span-12 md:col-span-3">
-                <div class="">Foto Bukti Pembayaran 30.000</div>
+                <div class="">Foto Bukti Pembayaran 35.000</div>
                 <div
                   class="
                     bg-gray-300
@@ -637,9 +721,9 @@
                 class="
                   bg-hijau-button
                   text-white
-                  px-3
-                  py-2
-                  rounded-full
+                  px-6
+                  py-3
+                  rounded-lg
                   inline-block
                   text-base
                   font-normal
@@ -649,6 +733,24 @@
                 @click="tautanGrupWa"
               >
                 Gabung Grup WhatsApp Calon Anggota
+              </div>
+              <div
+                class="
+                  bg-hijau-button
+                  text-white
+                  px-6
+                  py-3
+                  rounded-lg
+                  inline-block
+                  text-base
+                  font-normal
+                  cursor-pointer
+                  mt-6
+                  ml-6
+                "
+                @click="getDokument"
+              >
+                Download Dokumen Anda
               </div>
             </div>
           </div>
@@ -667,7 +769,8 @@ export default {
       meta: [
         {
           name: 'description',
-          content: 'Basic Training LK 1 bersama HMI Komfaktek 2021',
+          content:
+            'Latihan kader I (Basic Traning) merupakan jenjang training formal dasar pada organisasi Himpunan Mahasiswa Islam (HMI), dimana tujuan kegiatan ini adalah terbinanya kepribadian muslim yang berkualitas akademis sadar akan fungsi dan perannya dalam organisasi serta hak dan kewajibannya sebagai kader umat dan kader bangsa',
         },
         {
           name: 'title',
@@ -682,7 +785,7 @@ export default {
           itemprop: 'image',
           name: 'image',
           content:
-            'https://hmi-komfaktek.vercel.app/_nuxt/img/logo-komfaktek1.822fb18.png',
+            'https://komfaktek.nusacitateknologi.my.id/uploads/2023-02/15539b446e32a7a06cf4f936d0fb2d54.png',
         },
         {
           name: 'og:title',
@@ -693,7 +796,7 @@ export default {
           property: 'og:image',
           itemprop: 'image',
           content:
-            'https://hmi-komfaktek.vercel.app/_nuxt/img/logo-komfaktek1.822fb18.png',
+            'https://komfaktek.nusacitateknologi.my.id/uploads/2023-02/15539b446e32a7a06cf4f936d0fb2d54.png',
         },
         {
           name: 'og:site_name',
@@ -745,12 +848,16 @@ export default {
         semester: 0,
         alamat: '',
         tgl_lhr: null,
-        jenis_kl: '',
+        jenis_kl: 'Laki-laki',
         foto_diri: undefined,
         foto_ktm: undefined,
         foto_ktp: undefined,
         foto_bukti_by: undefined,
         rekeni_tujuan: 1,
+        alasan: undefined,
+        moto_hidup: undefined,
+        daerah_asal: undefined,
+        pengalaman_organisasi: undefined,
       },
       selectedFiles: {
         fotoDiri: undefined,
@@ -776,6 +883,13 @@ export default {
       let response = await this.$axios.get('rekening').then((ress) => {
         this.rekening = ress.data.data
       })
+    },
+    async getDokument() {
+      window.open(
+        'https://komfaktek.nusacitateknologi.my.id/api/daftarlk/dokument?email=' +
+          this.dataDaftarLk.email,
+        '_blank'
+      )
     },
     async cekDaftarLk() {
       let response = await this.$axios
@@ -850,7 +964,11 @@ export default {
         !this.dataDaftarLk.jenis_kl ||
         !this.dataDaftarLk.foto_diri ||
         !this.dataDaftarLk.foto_ktm ||
-        !this.dataDaftarLk.foto_bukti_by
+        !this.dataDaftarLk.foto_bukti_by ||
+        !this.dataDaftarLk.alasan ||
+        !this.dataDaftarLk.moto_hidup ||
+        !this.dataDaftarLk.daerah_asal ||
+        !this.dataDaftarLk.pengalaman_organisasi
       ) {
         this.$swal({
           icon: 'error',
@@ -876,6 +994,13 @@ export default {
       formData.append('rekening_id', this.dataDaftarLk.rekeni_tujuan)
       formData.append('jk', this.dataDaftarLk.jenis_kl)
       formData.append('tgl_lahir', this.dataDaftarLk.tgl_lhr)
+      formData.append('alasan', this.dataDaftarLk.alasan)
+      formData.append('moto_hidup', this.dataDaftarLk.moto_hidup)
+      formData.append('daerah_asal', this.dataDaftarLk.daerah_asal)
+      formData.append(
+        'pengalaman_organisasi',
+        this.dataDaftarLk.pengalaman_organisasi
+      )
 
       let submitData = await this.$axios
         .post('daftarlk/create', formData)
