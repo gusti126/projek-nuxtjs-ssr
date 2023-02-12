@@ -191,7 +191,7 @@ export default {
         })
         .catch((err) => {
           this.$swal({
-            icon: 'Error',
+            icon: 'error',
             title: 'Gagal Upload artikel, telah terjadi kesalahan',
             timer: 8000,
           })
