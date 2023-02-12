@@ -19,10 +19,13 @@
         min-h-screen
       "
     >
-      <div class="text-xl">
-        Ucapkan selamat Kepada
-        <span class="font-bold">{{ data.nama }}</span> yang telah berhasil
-        mendapatkan gelarnya {{ data.title }}
+      <div class="text-xl mb-6">
+        Selamat atas wisudanya kader Himpunan Mahasiswa Islam Komisariat
+        Fakultas Teknik Cabang Ciputat, "<span class="font-bold">{{
+          data.nama
+        }}</span
+        >". Semoga ilmunya dapat bermanfaat, dan semoga semakin mudah menemukan
+        simpul-simpul keberhasilan kedepannya.
       </div>
       <div class="my-4" v-for="item in ucapan" :key="ucapan.id">
         <div class="flex align-top items-start">
@@ -33,7 +36,7 @@
           />
           <div class="ml-3">
             <div class="font-semibold">{{ item.user.name }}</div>
-            <p class="mt-2 text-sm text-gray-600">
+            <p class="mt-1 text-sm text-gray-600">
               {{ item.body }}
             </p>
           </div>
