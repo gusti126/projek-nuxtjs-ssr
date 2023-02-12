@@ -60,7 +60,7 @@
             </div>
             <div v-if="this.$store.state.auth.user.user_detail">
               <img
-                :src="this.$store.state.auth.user.user_detail.image"
+                :src="this.$store.state.auth.user.image_profile"
                 alt=""
                 class="w-9 h-9 object-cover rounded-full"
               />

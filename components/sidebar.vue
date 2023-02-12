@@ -15,9 +15,9 @@
       top-0
     "
   >
-    <div class="" v-if="this.$store.state.auth.user.user_detail.image">
+    <div class="" v-if="this.$store.state.auth.user.image_profile">
       <img
-        :src="this.$store.state.auth.user.user_detail.image"
+        :src="this.$store.state.auth.user.image_profile"
         alt="profile image"
         class="
           w-32
@@ -49,7 +49,10 @@
       <div class="text-lg font-semibold text-gray-700">
         {{ this.$store.state.auth.user.name }}
       </div>
-      <div class="mt-1 text-sm text-gray-600">
+      <div
+        class="mt-1 text-sm text-gray-600"
+        v-if="this.$store.state.auth.user.user_detail"
+      >
         {{ this.$store.state.auth.user.user_detail.profesi }}
       </div>
     </div>

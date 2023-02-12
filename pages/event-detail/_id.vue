@@ -354,7 +354,7 @@ export default {
         .get('event/' + this.$route.params.id)
         .then((ress) => {
           this.items = ress.data.data
-          // console.log(this.items.moderator[0].user.user_detail.image)
+          // console.log(this.items.moderator[0].user.image_profile)
           this.moderator.image =
             this.items.moderator[0].user.image_profile ?? ''
           this.moderator.title =

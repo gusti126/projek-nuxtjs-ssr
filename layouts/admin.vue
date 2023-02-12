@@ -60,9 +60,9 @@
             top-0
           "
         >
-          <div class="" v-if="this.$store.state.auth.user.user_detail.image">
+          <div class="" v-if="this.$store.state.auth.user.image_profile">
             <img
-              :src="this.$store.state.auth.user.user_detail.image"
+              :src="this.$store.state.auth.user.image_profile"
               alt="profile image"
               class="
                 w-32

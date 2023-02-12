@@ -196,13 +196,19 @@ export default {
     return {
       user: {
         name: this.$store.state.auth.user.name,
-        profesi: this.$store.state.auth.user.user_detail.profesi,
-        alamat: this.$store.state.auth.user.user_detail.alamat,
-        tgl_lahir: this.$store.state.auth.user.user_detail.tgl_lahir,
+        profesi: this.$store.state.auth.user.user_detail
+          ? this.$store.state.auth.user.user_detail.profesi
+          : '',
+        alamat: this.$store.state.auth.user.user_detail
+          ? this.$store.state.auth.user.user_detail.alamat
+          : '',
+        tgl_lahir: this.$store.state.auth.user.user_detail
+          ? this.$store.state.auth.user.user_detail.tgl_lahir
+          : '',
       },
       updateImage: false,
       selectedFiles: undefined,
-      imgUrl: this.$store.state.auth.user.user_detail.image,
+      imgUrl: this.$store.state.auth.user.image_profile,
     }
   },
 
