@@ -95,7 +95,8 @@ export default {
         {
           itemprop: 'title',
           name: 'title',
-          content: this.data.nama + ' Wisuda | Kader HMI KOMFAKTEK',
+          content:
+            this.data.nama + ' ' + this.data.title + ' | Kader HMI KOMFAKTEK',
         },
         {
           name: 'og:title',
@@ -123,13 +124,13 @@ export default {
           name: 'og:image',
           property: 'og:image',
           content:
-            'https://komfaktek.nusacitateknologi.my.id/' + this.data.thumbnail,
+            'https://komfaktek.nusacitateknologi.my.id/' + this.data.image,
         },
         {
           name: 'image',
           property: 'image',
           content:
-            'https://komfaktek.nusacitateknologi.my.id/' + this.data.thumbnail,
+            'https://komfaktek.nusacitateknologi.my.id/' + this.data.image,
         },
         {
           name: 'instagram:title',
@@ -145,7 +146,7 @@ export default {
           name: 'image',
           itemprop: 'image',
           content:
-            'https://komfaktek.nusacitateknologi.my.id/' + this.data.thumbnail,
+            'https://komfaktek.nusacitateknologi.my.id/' + this.data.image,
         },
         {
           name: 'description',
