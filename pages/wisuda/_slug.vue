@@ -104,7 +104,7 @@ export default {
         {
           name: 'og:title',
           property: 'og:title',
-          content: this.data.nama + ' Wisuda',
+          content: this.data.nama + ', ' + this.data.title,
         },
         {
           name: 'og:site_name',
