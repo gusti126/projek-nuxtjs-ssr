@@ -4,7 +4,7 @@
     <div class="bg-gradient-to-r from-green-500 px-4 to-green-800 py-4 pb-6">
       <div>
         <img
-          :src="this.$store.state.auth.user.user_detail.image"
+          :src="this.$store.state.auth.user.image_profile"
           class="
             rounded-full
             border-2 border-white
@@ -13,7 +13,7 @@
             object-cover
             mx-auto
           "
-          v-if="this.$store.state.auth.user.user_detail.image"
+          v-if="this.$store.state.auth.user.image_profile"
           alt=""
         />
         <img
@@ -33,7 +33,10 @@
         <div class="text-white text-lg font-medium">
           {{ this.$store.state.auth.user.name }}
         </div>
-        <div class="text-gray-300">
+        <div
+          class="text-gray-300"
+          v-if="this.$store.state.auth.user.user_detail"
+        >
           {{ this.$store.state.auth.user.user_detail.profesi }}
         </div>
       </div>
