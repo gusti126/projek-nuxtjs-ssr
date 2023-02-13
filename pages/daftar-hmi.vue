@@ -1018,8 +1018,7 @@ export default {
           this.$store.commit('setLoading', false)
           this.$swal({
             icon: 'error',
-            title: 'Berhasil Kirim Form',
-            text: e.response.data.message,
+            title: e.response.data.message,
           })
         })
     },
