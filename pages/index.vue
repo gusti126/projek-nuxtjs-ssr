@@ -2,6 +2,7 @@
   <div>
     <div>
       <navmobile />
+
       <section class="hidden md:block">
         <div
           class="
@@ -460,6 +461,7 @@ export default {
     return {
       list: [0, 1, 2, 3, 4],
       items: [],
+      showModal: true,
     }
   },
   mounted() {
@@ -470,6 +472,13 @@ export default {
       let resposnes = await this.$axios.get('event').then((ress) => {
         this.items = ress.data.data
       })
+    },
+    handleShowModal() {
+      if (this.showModal) {
+        this.showModal = false
+      } else {
+        this.showModal = true
+      }
     },
   },
 }

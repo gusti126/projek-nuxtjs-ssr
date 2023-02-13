@@ -746,7 +746,7 @@
                   font-normal
                   cursor-pointer
                   mt-6
-                  ml-6
+                  md:ml-6
                 "
                 @click="getDokument"
               >
@@ -1015,6 +1015,12 @@ export default {
         })
         .catch((e) => {
           console.log(e.response.data.message)
+          this.$store.commit('setLoading', false)
+          this.$swal({
+            icon: 'error',
+            title: 'Berhasil Kirim Form',
+            text: e.response.data.message,
+          })
         })
     },
   },
