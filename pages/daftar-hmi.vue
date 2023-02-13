@@ -922,34 +922,73 @@ export default {
     onFotodiri(e) {
       if (e.target.files.length !== 0) {
         const file = e.target.files[0]
-        this.dataDaftarLk.foto_diri = URL.createObjectURL(file)
-        // console.log(this.dataDaftarLk.foto_diri)
-        this.selectedFiles.fotoDiri = this.$refs.fotodiri.files
-        console.log('foto diri')
+        const fileSize = file.size / 1024 / 1024
+        if (fileSize > 3) {
+          console.log('file.size', fileSize)
+          this.$swal({
+            icon: 'error',
+            text: 'Gambar maksimal 3 mb',
+          })
+        } else {
+          this.dataDaftarLk.foto_diri = URL.createObjectURL(file)
+          // console.log(this.dataDaftarLk.foto_diri)
+          this.selectedFiles.fotoDiri = this.$refs.fotodiri.files
+          console.log('file.size', fileSize)
+          console.log('foto diri')
+        }
       }
     },
     onFotoKtm(e) {
       if (e.target.files.length !== 0) {
         const file = e.target.files[0]
-        this.dataDaftarLk.foto_ktm = URL.createObjectURL(file)
-        this.selectedFiles.fotoKtm = this.$refs.fotoktm.files
-        console.log('foto Ktm')
+
+        const fileSize = file.size / 1024 / 1024
+        if (fileSize > 3) {
+          console.log('file.size', fileSize)
+          this.$swal({
+            icon: 'error',
+            text: 'Gambar maksimal 3 mb',
+          })
+        } else {
+          this.dataDaftarLk.foto_ktm = URL.createObjectURL(file)
+          this.selectedFiles.fotoKtm = this.$refs.fotoktm.files
+          console.log('foto Ktm')
+        }
       }
     },
     onFotoKtp(e) {
       if (e.target.files.length !== 0) {
         const file = e.target.files[0]
-        this.dataDaftarLk.foto_ktp = URL.createObjectURL(file)
-        this.selectedFiles.fotoKtp = this.$refs.fotoKtp.files
-        console.log('foto ktp')
+
+        const fileSize = file.size / 1024 / 1024
+        if (fileSize > 3) {
+          console.log('file.size', fileSize)
+          this.$swal({
+            icon: 'error',
+            text: 'Gambar maksimal 3 mb',
+          })
+        } else {
+          this.dataDaftarLk.foto_ktp = URL.createObjectURL(file)
+          this.selectedFiles.fotoKtp = this.$refs.fotoKtp.files
+          console.log('foto ktp')
+        }
       }
     },
     onFotoByr(e) {
       if (e.target.files.length !== 0) {
         const file = e.target.files[0]
-        this.dataDaftarLk.foto_bukti_by = URL.createObjectURL(file)
-        this.selectedFiles.fotoBayar = this.$refs.fotoByr.files
-        console.log('foto bayar')
+        const fileSize = file.size / 1024 / 1024
+        if (fileSize > 3) {
+          console.log('file.size', fileSize)
+          this.$swal({
+            icon: 'error',
+            text: 'Gambar maksimal 3 mb',
+          })
+        } else {
+          this.dataDaftarLk.foto_bukti_by = URL.createObjectURL(file)
+          this.selectedFiles.fotoBayar = this.$refs.fotoByr.files
+          console.log('foto bayar')
+        }
       }
     },
     async daftarLksatu() {
