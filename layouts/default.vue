@@ -16,27 +16,24 @@
         items-center
         justify-center
       "
-      style="background: rgba(0, 0, 0, 0.3)"
+      style="background: rgba(0, 0, 0, 0.5)"
       v-show="this.$store.state.loading"
     >
       <div
-        class="bg-white border py-2 px-5 rounded-lg flex items-center flex-col"
+        class="
+          pb-2
+          pt-3
+          px-5
+          rounded-lg
+          flex
+          items-center
+          justify-center
+          text-center
+          flex-col
+        "
       >
-        <div class="loader-dots block relative w-20 h-5 mt-2">
-          <div
-            class="absolute top-0 mt-1 w-3 h-3 rounded-full bg-green-500"
-          ></div>
-          <div
-            class="absolute top-0 mt-1 w-3 h-3 rounded-full bg-green-500"
-          ></div>
-          <div
-            class="absolute top-0 mt-1 w-3 h-3 rounded-full bg-green-500"
-          ></div>
-          <div
-            class="absolute top-0 mt-1 w-3 h-3 rounded-full bg-green-500"
-          ></div>
-        </div>
-        <div class="text-gray-500 text-xs font-light mt-2 text-center">
+        <img src="~/assets/load.svg" alt="logo" class="w-40" />
+        <div class="text-white text-base text-center font-semibold">
           loading sebentar....
         </div>
       </div>

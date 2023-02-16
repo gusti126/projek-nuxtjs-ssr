@@ -5,7 +5,7 @@
         class="
           container
           mx-auto
-          lg:px-10
+          lg:px-20
           md:flex
           justify-between
           py-5
@@ -29,6 +29,9 @@
           <nuxt-link to="/tulisan" class="ml-8 hover:text-green-700 my-auto"
             >Tulisan</nuxt-link
           >
+          <nuxt-link to="/lihat-surah" class="ml-8 hover:text-green-700 my-auto"
+            >Al-Qur'an
+          </nuxt-link>
           <nuxt-link to="/galang-dana" class="ml-8 hover:text-green-700 my-auto"
             >Galang Dana</nuxt-link
           >

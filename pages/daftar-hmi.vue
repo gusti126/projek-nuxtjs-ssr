@@ -1011,7 +1011,7 @@ export default {
       ) {
         this.$swal({
           icon: 'error',
-          title: 'Gagal Daftar Basic Training',
+          title: 'Gagal!',
           text: 'Ada Form yang kosong silahkan isi terlebih dahulu',
         })
         // console.log(this.dataDaftarLk)
