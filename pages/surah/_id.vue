@@ -65,6 +65,12 @@ export default {
           content: 'https://www.hmikomfaktek.com/logo-komfaktek.png',
         },
         {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: "Al-Qur'an Online",
+        },
+        {
           hid: 'image',
           name: 'image',
           itemprop: 'image',
