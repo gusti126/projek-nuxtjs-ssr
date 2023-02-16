@@ -63,6 +63,74 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: "Al-Qur'an Online ",
+      meta: [
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          property: 'og:image',
+          itemprop: 'image',
+          content: 'https://www.hmikomfaktek.com/logo-komfaktek.png',
+        },
+        {
+          hid: 'image',
+          name: 'image',
+          itemprop: 'image',
+          property: 'image',
+          content: 'https://www.hmikomfaktek.com/logo-komfaktek.png',
+        },
+        {
+          hid: 'og:type',
+          name: 'og:type',
+          itemprop: 'og:type',
+          property: 'og:type',
+          content: 'website',
+        },
+        {
+          hid: 'og:image:width',
+          name: 'og:image:width',
+          itemprop: 'og:image:width',
+          property: 'og:image:width',
+          content: '300',
+        },
+        {
+          hid: 'og:image:height',
+          name: 'og:image:height',
+          itemprop: 'og:image:height',
+          property: 'og:image:height',
+          content: '300',
+        },
+        {
+          itemprop: 'width',
+          content: '300',
+        },
+        {
+          itemprop: 'height',
+          content: '300',
+        },
+        {
+          itemprop: 'image',
+          name: 'image',
+          content: 'https://www.hmikomfaktek.com/logo-komfaktek.png',
+        },
+        {
+          name: 'description',
+          itemprop: 'description',
+          content:
+            "Al-Qur'an Online Terjemahan Bahasa Indonesia| HMI Komfaktek Melangkah Maju ",
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content:
+            " Al-Qur'an Online Terjemahan bahasa Indonesia| HMI Komfaktek Melangkah Maju ",
+        },
+      ],
+    }
+  },
   data() {
     return {
       tempData: [],
