@@ -29,7 +29,7 @@
           <nuxt-link to="/tulisan" class="ml-8 hover:text-green-700 my-auto"
             >Tulisan</nuxt-link
           >
-          <nuxt-link to="/lihat-surah" class="ml-8 hover:text-green-700 my-auto"
+          <nuxt-link to="/list-surah" class="ml-8 hover:text-green-700 my-auto"
             >Al-Qur'an
           </nuxt-link>
           <nuxt-link to="/galang-dana" class="ml-8 hover:text-green-700 my-auto"
