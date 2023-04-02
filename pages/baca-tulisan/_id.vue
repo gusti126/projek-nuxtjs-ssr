@@ -75,7 +75,7 @@
                   <div class="flex ml-4">
                     <nuxt-link
                       :to="
-                        'whatsapp://send?text=https://hmikomfaktek.com/baca-tulisan/' +
+                        '/whatsapp://send?text=https://hmikomfaktek.com/baca-tulisan/' +
                         response.data.id
                       "
                       class=""
