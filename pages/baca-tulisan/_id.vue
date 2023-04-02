@@ -73,7 +73,13 @@
                     </div>
                   </div>
                   <div class="flex ml-4">
-                    <nuxt-link to="#" class="">
+                    <nuxt-link
+                      :to="
+                        'whatsapp://send?text=https://hmikomfaktek.com/baca-tulisan/' +
+                        response.data.id
+                      "
+                      class=""
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
