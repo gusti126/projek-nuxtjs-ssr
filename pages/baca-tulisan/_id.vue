@@ -58,7 +58,7 @@
                     <div class="text-lg font-medium">
                       {{ response.data.user.name }}
                     </div>
-                    <div class="flex w-full">
+                    <!-- <div class="flex w-full">
                       <div
                         class="
                           w-full
@@ -70,7 +70,7 @@
                       >
                         {{ response.data.user.email }}
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                   <div class="flex ml-4">
                     <a
@@ -142,7 +142,7 @@
                       <div class="text-lg font-medium">
                         {{ tulisan.user.name }}
                       </div>
-                      <div class="flex w-full">
+                      <!-- <div class="flex w-full">
                         <div
                           class="
                             w-full
@@ -154,7 +154,7 @@
                         >
                           {{ tulisan.user.email }}
                         </div>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                   <div class="mt-5">

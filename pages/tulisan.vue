@@ -53,7 +53,7 @@
         >
           <div class="">
             <!-- header card -->
-            <div class="flex justify-items-center">
+            <div class="flex justify-items-center items-center">
               <div class="">
                 <img
                   :src="
@@ -67,9 +67,9 @@
               </div>
               <div class="ml-4 w-full">
                 <div class="text-lg font-medium">{{ tulisan.user.name }}</div>
-                <div class="w-full text-left text-gray-600 font-normal text-sm">
+                <!-- <div class="w-full text-left text-gray-600 font-normal text-sm">
                   {{ tulisan.user.email }}
-                </div>
+                </div> -->
                 <div class="flex w-full"></div>
               </div>
             </div>
