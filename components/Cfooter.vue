@@ -64,7 +64,7 @@
         text-center text-white
       "
     >
-      Copyrigth komfaktek 2021
+      Copyrigth komfaktek 2024
     </footer>
   </div>
 </template>
